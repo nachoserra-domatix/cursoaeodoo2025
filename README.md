@@ -9,3 +9,5 @@ Listado
 | Pedro | Recio | Pedro_Recio |
 | Alba | Pérez | AlbaPeGui |
 |Edu | Galvan |Edu_dis|
+| Jaume| Jaume  | Jaume_Discord |
+
