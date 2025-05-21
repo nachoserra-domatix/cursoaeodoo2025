@@ -12,4 +12,4 @@ Listado
 | Jaume| Jaume  | Jaume_Discord |
 | Boris | hola | mundo |
 | Dante | Pereyra | DPereyra_discord |
-
+| Alexandra | Suarez | Alex_Discord |
