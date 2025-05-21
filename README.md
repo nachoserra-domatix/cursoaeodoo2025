@@ -11,3 +11,4 @@ Listado
 |Edu | Galvan |Edu_dis|
 | Jaume| Jaume  | Jaume_Discord |
 | Boris | hola | mundo |
+| Dante | Pereyra | DPereyra_discord |
