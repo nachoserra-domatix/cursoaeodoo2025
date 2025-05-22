@@ -12,3 +12,4 @@ Listado
 | Jaume| Jaume  | Jaume_Discord |
 | Boris | hola | mundo |
 | Dante | Pereyra | DPereyra_discord |
+| Àngel | Bernat | angelbernat_48314 |
