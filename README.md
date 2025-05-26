@@ -13,3 +13,7 @@ Listado
 | Boris | hola | mundo |
 | Dante | Pereyra | DPereyra_discord |
 | AJ | AJ | AJ |
+|Irlui | Ramirez |Irlui_10013|
+| Àngel | Bernat | angelbernat_48314 |
+| Marc | Mora | marcmora_00195 |
+| Alexandra | Suarez | Alex_Discord |
