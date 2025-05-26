@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_music_school_instrument_form" model="ir.ui.view">
+        <field name="name">music.school.instrument.form</field>
+        <field name="model">music.school.instrument</field>
+        <field name="arch" type="xml">
+            <form string="Instrumento">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="family"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_music_school_instrument_list" model="ir.ui.view">
+        <field name="name">music.school.instrument.list</field>
+        <field name="model">music.school.instrument</field>
+        <field name="arch" type="xml">
+            <list string="Instrumentos">
+                <field name="name"/>
+                <field name="family"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_music_school_instrument" model="ir.actions.act_window">
+        <field name="name">Instrumentos</field>
+        <field name="res_model">music.school.instrument</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="music_school_menu_root" name="Escuela de Música"/>
+
+    <menuitem id="music_school_menu_instrument"
+              name="Instrumentos"
+              parent="music_school_menu_root"
+              action="action_music_school_instrument"/>
+</odoo>
