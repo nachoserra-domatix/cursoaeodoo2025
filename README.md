@@ -17,3 +17,4 @@ Listado
 | Àngel | Bernat | angelbernat_48314 |
 | Marc | Mora | marcmora_00195 |
 | Alexandra | Suarez | Alex_Discord |
+| Fran | Pérez | franperez_45514 |
