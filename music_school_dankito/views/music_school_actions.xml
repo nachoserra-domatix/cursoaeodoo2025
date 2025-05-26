@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_menu_action" model="ir.actions.act_window">
+        <field name="name">Student</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">music.school.student</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="music_school_instrument_menu_action" model="ir.actions.act_window">
+        <field name="name">Instruments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">music.school.instrument</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_student_view_form" model="ir.ui.view">
+        <field name="name">music.school.student.view.form</field>
+        <field name="model">music.school.student</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <sheet>
+                    <group>
+                        <field name="active" />
+                        <field name="name" />
+                        <field name="email" />
+                        <field name="phone" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="music_school_student_view_list" model="ir.ui.view">
+        <field name="name">music.school.student.view.list</field>
+        <field name="model">music.school.student</field>
+        <field name="arch" type="xml">
+            <list string="Students list">
+                <field name="active" />
+                <field name="name" />
+                <field name="email" />
+                <field name="phone" />
+            </list>
+        </field>
+    </record>
+
+</odoo>
