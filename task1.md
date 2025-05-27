@@ -1,18 +1,16 @@
 # Añadir seguridad (7)
 Hacer dos grupos de usuario, manager y user.
 El usuario solo podrá ver y modificar los estudiantes que tenga asignados (crearemos un campo user_id)
-El manager podrá crear, borrar ver y modificar cualquier cita
-
-Hacer reglas para que un estudiante solo pueda ser visto por su responsable si el grupo es usuario. (para esto antes es necesario crear el user_id en estudiantes)
+El manager podrá crear, borrar ver y modificar cualquier estudiante
 
 # Vistas (9)
 Añadir campos notes(html), sequence y responsable(many2one)
 
 ## Vista tipo lista:
 Añadir campo sequence con widget handle
-Mostrar nombre, fecha de alta,responsable, y estado
-Campo fecha que sea opcional y mostrarlo por defecto
-Campo responsable que sea opcional pero ocultarlo
+Mostrar nombre, mail, teléfono, fecha de alta,responsable, cumpleaños y edad
+Campo fecha que sea opcional y mostrarlo por defecto (optional show)
+Campo responsable que sea opcional pero ocultarlo (optional hide)
 
 ## Vista formulario
 Nombre h1 como en pedidos y dos columnas:
