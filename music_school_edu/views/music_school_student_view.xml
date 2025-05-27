@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="music_school_student_action" model="ir.actions.act_window">
+        <field name="name">Student action</field>
+        <field name="res_model">music.school.student</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first student record.
+            </p>        
+        </field>
+    </record>
+
+    <record id="music_school_student_view_list" model="ir.ui.view">
+        <field name="name">music.school.student.view.list</field>
+        <field name="model">music.school.student</field>       
+        <field name="arch" type="xml">
+            <list multi_edit="1" string="Students">
+                <field name="name"/>
+                <field name="user_id" optional="show"/>
+                <field name="email" optional="show"/>
+                <field name="phone"/>
+                <field name="age" optional="hide"/>
+                <field name="birthdate" optional="hide"/>                
+            </list>
+        </field>
+    </record>
+    <record id="music_school_student_view_form" model="ir.ui.view">
+        <field name="name">music.school.student.view.form</field>
+        <field name="model">music.school.student</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Student Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="email"/>
+                        <field name="phone"/>
+                    </group>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="age"/>
+                        <field name="birthdate"/>
+                    </group>
+                    <notebook>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
