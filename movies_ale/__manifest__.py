@@ -1,11 +1,11 @@
 {
     'name': 'Music School',
     'version': '18.0.0.0.0',
-    'description': 'Manages a music school',
-    'summary': 'Manages a music school',
+    'description': 'Manages a movies list',
+    'summary': 'Manages a movies list',
     'author': 'Alexandra Suarez',
     'license': 'LGPL-3',
-    'category': 'Music School',
+    'category': 'Movies list',
     'depends': [
         'base'
     ],

@@ -1,5 +1,12 @@
 from odoo import models, fields
 
+'''
+    Este modelo representa los instrumentos de la escuela de musica 
+    incluye los campos para el nombre, la familia y descripcion.
+
+    Tambien utilizamos el campo seleccion, para seleccionar el tipo de 
+    intrumento de familia. 
+'''
 
 class MusicSchoolInstrument(models.Model):
     _name = 'music.school.instrument'
