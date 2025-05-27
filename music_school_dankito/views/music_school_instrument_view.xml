@@ -9,8 +9,12 @@
                     <group>
                         <field name="name" />
                         <field name="family" />
-                        <field name="description" />
                     </group>
+                    <notebook>
+                        <page string="Instrument description">
+                            <field name="description" />
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

@@ -11,7 +11,9 @@
         'base'
     ],
     'data': [
+        'security/res_groups.xml',
         'security/ir.model.access.csv',
+        'security/student_security.xml',
         'views/music_school_actions.xml',
         'views/music_school_menu.xml',
         'views/music_school_student_view.xml',

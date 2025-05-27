@@ -11,6 +11,8 @@
                         <field name="name" />
                         <field name="email" />
                         <field name="phone" />
+                        <field name="birthday" />
+                        <field name="user_id" />
                     </group>
                 </sheet>
             </form>
@@ -22,10 +24,13 @@
         <field name="model">music.school.student</field>
         <field name="arch" type="xml">
             <list string="Students list">
-                <field name="active" />
-                <field name="name" />
-                <field name="email" />
-                <field name="phone" />
+                <field name="active" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="email" optional="show"/>
+                <field name="phone" optional="show"/>
+                <field name="birthday" optional="show" />
+                <field name="user_id" optional="show"/>
+
             </list>
         </field>
     </record>

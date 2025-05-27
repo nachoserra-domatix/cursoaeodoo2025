@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_user_rule" model="ir.rule">
+        <field name="name">Music School User Rule</field>
+        <field ref="model_music_school_student" name="model_id"/>
+        <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        <field name="groups" eval="[(4, ref('group_music_school_user'))]"/>
+    </record>
+    <record id="music_school_manager_rule" model="ir.rule">
+        <field name="name">Music School Manager Rule</field>
+        <field ref="model_music_school_student" name="model_id"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[(4, ref('group_music_school_manager'))]"/>
+    </record>
+</odoo>
