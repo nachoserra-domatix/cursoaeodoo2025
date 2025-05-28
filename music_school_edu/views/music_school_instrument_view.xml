@@ -19,6 +19,7 @@
                 <field name="name"/>
                 <field name="family" optional="show"/>
                 <field name="state"/>
+                <field name="maintenance_date" optional="show"/>
                 <field name="manufacturer" optional="hide"/>                
             </list>
         </field>
@@ -28,6 +29,9 @@
         <field name="model">music.school.instrument</field>
         <field name="arch" type="xml">
             <form string="">
+                <header>
+                    <button string="Generate maintenance date" name="update_maintenance_date" type="object" class="oe_highlight"/>
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -38,6 +42,7 @@
                         <field name="family"/>
                         <field name="state"/>
                         <field name="manufacturer"/>
+                        <field name="maintenance_date" readonly="1"/>
                     </group>
                     <notebook>
                         <page string="Description">

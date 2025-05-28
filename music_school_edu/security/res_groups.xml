@@ -17,7 +17,7 @@
     <field name="comment">The manager will be able to create,write and delete records</field>
 </record>
 
-<record id="ir_module_music_school_instrument" model="ir.module.category">
+<!-- <record id="ir_module_music_school_instrument" model="ir.module.category">
     <field name="name">Music School Instrument</field>
 </record>
 <record id="group_music_school_instrument_user" model="res.groups">
@@ -30,7 +30,7 @@
     <field name="category_id" ref="ir_module_music_school_instrument"/>
     <field name="implied_ids" eval="[(4, ref('group_music_school_instrument_user'))]"/>
     <field name="comment">The manager will be able to create,write and delete records</field>
-</record>
+</record> -->
 <!--registration rules-->
 <record id="music_school_student_personal_rule" model="ir.rule">
     <field name="name">Personal Students</field>

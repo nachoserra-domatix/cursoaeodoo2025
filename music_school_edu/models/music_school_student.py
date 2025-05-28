@@ -19,4 +19,8 @@ class MusicSchoolStudent(models.Model):
         string="Responsible",
         help="Responsible for this student"
     )
+    reference= fields.Char(string="Reference")
 
+    def generate_reference(self):
+        for record in self:
+            record.reference = f"ESC-{record.id}{record.name[0:3].upper()}"
