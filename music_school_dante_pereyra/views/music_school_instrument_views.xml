@@ -1,41 +1,61 @@
 <odoo>
-    <record id="view_music_school_instrument_form" model="ir.ui.view">
-        <field name="name">music.school.instrument.form</field>
+
+    <record id="music_school_instrument_action" model="ir.actions.act_window">
+        <field name="name">Instrument</field>
+        <field name="res_model">music.school.instrument</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create your first instrument
+             </p>
+        </field>
+    </record>
+
+    <record id="music_school_instrument_view_list" model="ir.ui.view">
+        <field name="name">music.school.instrument.view.list</field>
         <field name="model">music.school.instrument</field>
         <field name="arch" type="xml">
-            <form string="Instrumento">
+            <list string="Instruments">
+                <field name="name"/>
+                <field name="family" optional="show"/>
+                <field name="description" optional="hide"/>
+                <field name="last_maintenance_date" optional="show"/>
+                <field name="last_check_date" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="music_school_instrument_view_form" model="ir.ui.view">
+        <field name="name">music.school.instrument.view.form</field>
+        <field name="model">music.school.instrument</field>
+        <field name="arch" type="xml">
+            <form string="Instrument">
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Instrument"/>
+                        </h1>
+                    </div>
                     <group>
-                        <field name="name"/>
-                        <field name="family"/>
-                        <field name="description"/>
+                        <field name="family" widget="radio"/>
                     </group>
+                    <group>
+                        <field name="last_maintenance_date"/>
+                        <field name="last_check_date"/>
+                        <button name="action_set_today_dates"
+                                string="Update dates"
+                                type="object"
+                                class="btn-secondary"/>
+                    </group>
+                    <notebook>
+                    <page string="Description">
+                        <field name="description"/>
+                    </page>
+                </notebook>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="view_music_school_instrument_list" model="ir.ui.view">
-        <field name="name">music.school.instrument.list</field>
-        <field name="model">music.school.instrument</field>
-        <field name="arch" type="xml">
-            <list string="Instrumentos">
-                <field name="name"/>
-                <field name="family"/>
-            </list>
-        </field>
-    </record>
-
-    <record id="action_music_school_instrument" model="ir.actions.act_window">
-        <field name="name">Instrumentos</field>
-        <field name="res_model">music.school.instrument</field>
-        <field name="view_mode">list,form</field>
-    </record>
-
-    <menuitem id="music_school_menu_root" name="Escuela de Música"/>
-
-    <menuitem id="music_school_menu_instrument"
-              name="Instrumentos"
-              parent="music_school_menu_root"
-              action="action_music_school_instrument"/>
 </odoo>
