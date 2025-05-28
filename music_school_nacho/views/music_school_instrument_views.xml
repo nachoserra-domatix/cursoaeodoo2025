@@ -21,6 +21,7 @@
                 <field name="name"/>
                 <field name="family" optional="show"/>
                 <field name="description" optional="hide"/>
+                <field name="last_maintenance_date" optional="hide"/>
             </list>
         </field>
     </record>
@@ -30,6 +31,9 @@
         <field name="model">music.school.instrument</field>
         <field name="arch" type="xml">
             <form string="Instrument">
+            <header>
+            <button string="Instrument maintenance" name="instrument_maintenance" type="object" class="btn-warning"/>
+            </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -42,6 +46,10 @@
                     <notebook>
                     <page string="Description">
                         <field name="description"/>
+                    </page>
+                    <page string="Observations">
+                    <group>
+                        <field name="last_maintenance_date" readonly="1"/>
                     </page>
                 </notebook>
                 </sheet>

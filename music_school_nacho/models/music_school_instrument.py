@@ -18,3 +18,11 @@ class MusicSchoolInstrument(models.Model):
         required=True,
     )
     description = fields.Text(string="Description")
+    last_maintenance_date = fields.Date(
+        string="Last Maintenance Date",
+        help="Date of the last maintenance performed on the instrument"
+    )
+
+    def instrument_maintenance(self):
+        for record in self:
+            record.last_maintenance_date = fields.Date.today()
