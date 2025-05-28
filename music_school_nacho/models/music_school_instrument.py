@@ -5,7 +5,7 @@ class MusicSchoolInstrument(models.Model):
     _name = 'music.school.instrument'
     _description = 'Instruments'
 
-    name = fields.Char(string="Name", required=True)
+    name = fields.Char(string="Name", required=True, translate=True)
     family = fields.Selection(
         selection=[
             ('string', 'String'),
