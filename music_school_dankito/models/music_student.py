@@ -1,4 +1,5 @@
 from odoo import models, fields
+from datetime import  date
 
 class MusicSchoolStudent(models.Model):
 
@@ -16,4 +17,11 @@ class MusicSchoolStudent(models.Model):
         help="Responsible User",
         comodel_name="res.users"
     )
+
+    reference = fields.Char(string="Reference")
+
+    def generate_code(self):
+        year = date.today().year
+        name_txt = (self.name or '').strip().replace(' ', '').upper()
+        self.reference = f"MAT/{year}/{name_txt}"
 

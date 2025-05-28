@@ -5,9 +5,13 @@
         <field name="model">music.school.student</field>
         <field name="arch" type="xml">
             <form string="Student">
+                <header>
+                    <button string="Generate code" name="generate_code" type="object" class="btn-primary"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="active" />
+                        <field name="reference" />
                         <field name="name" />
                         <field name="email" />
                         <field name="phone" />
@@ -25,6 +29,7 @@
         <field name="arch" type="xml">
             <list string="Students list">
                 <field name="active" optional="show"/>
+                <field name="reference" optional="show"/>
                 <field name="name" optional="show"/>
                 <field name="email" optional="show"/>
                 <field name="phone" optional="show"/>

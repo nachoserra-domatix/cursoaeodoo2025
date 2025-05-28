@@ -1,4 +1,5 @@
 from odoo import models, fields
+from datetime import date
 
 class MusicSchoolInstrument(models.Model):
 
@@ -16,3 +17,9 @@ class MusicSchoolInstrument(models.Model):
         string='Family',
         required=True
     )
+
+    last_revision_date = fields.Date(string="Last revision date")
+
+    def set_last_revision_date(self):
+        today = date.today()
+        self.last_revision_date = today

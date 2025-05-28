@@ -9,6 +9,10 @@
                     <group>
                         <field name="name" />
                         <field name="family" />
+                        <div class="o_row">
+                            <field name="last_revision_date" />
+                            <button string="Reviewed" name="set_last_revision_date" type="object" class="btn-secondary btn-sm" icon="fa-refresh" />
+                        </div>
                     </group>
                     <notebook>
                         <page string="Instrument description">
@@ -27,6 +31,7 @@
             <list string="Instrument list">
                 <field name="name" />
                 <field name="family" />
+                <field name="last_revision_date" />
             </list>
         </field>
     </record>
