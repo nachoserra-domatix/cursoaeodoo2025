@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
 <record id="music_school_student_action" model="ir.actions.act_window">
     <field name="name">Students</field>
     <field name="res_model">music.school.student</field>
@@ -32,9 +33,6 @@
     <field name="model">music.school.student</field>
     <field name="arch" type="xml">
         <form string="Students">
-            <header>
-            <button string="Generate reference" name="generate_reference" type="object" class="btn-primary"/>
-            </header>
             <sheet>
                 <div class="oe_title">
                     <h1>
@@ -43,7 +41,6 @@
                 </div>
                 <group>
                     <group>
-                        <field name="reference" readonly="1"/>
                         <field name="email"/>
                         <field name="phone"/>
                     </group>
@@ -64,4 +61,5 @@
 </record>
 
     
+
 </odoo>

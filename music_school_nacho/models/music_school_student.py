@@ -20,11 +20,4 @@ class MusicSchoolStudent(models.Model):
         string="Notes",
         help="Additional notes about the student"
     )
-
-    reference = fields.Char(
-        string="Reference",
-    )
     
-    def generate_reference(self):
-        for record in self:
-            record.reference = f"ESC-{record.id}{record.name}"

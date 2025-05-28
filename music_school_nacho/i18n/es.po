@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-28 16:12+0000\n"
-"PO-Revision-Date: 2025-05-28 16:12+0000\n"
+"POT-Creation-Date: 2025-05-28 18:08+0000\n"
+"PO-Revision-Date: 2025-05-28 18:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "Activo"
 #. module: music_school_nacho
 #: model:ir.model.fields,help:music_school_nacho.field_music_school_student__notes
 msgid "Additional notes about the student"
-msgstr "Notas adiciones sobre el estudiante"
+msgstr "Notas adicionales del estudiante"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__age
@@ -33,7 +33,7 @@ msgstr "Edad"
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__birthdate
 msgid "Birthdate"
-msgstr "Cumpleaños"
+msgstr "Fecha de nacimiento"
 
 #. module: music_school_nacho
 #: model_terms:ir.actions.act_window,help:music_school_nacho.music_school_instrument_action
@@ -43,7 +43,7 @@ msgstr "Crea tu primer instrumento"
 #. module: music_school_nacho
 #: model_terms:ir.actions.act_window,help:music_school_nacho.music_school_student_action
 msgid "Create your first student"
-msgstr "Crea tú primer estudiante"
+msgstr "Crea tu primer estudiante"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__create_uid
@@ -55,16 +55,15 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__create_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creado en"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,help:music_school_nacho.field_music_school_instrument__last_maintenance_date
 msgid "Date of the last maintenance performed on the instrument"
-msgstr ""
+msgstr "Fecha del último mantenimiento realizado en el instrumento"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__description
-#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_form
 msgid "Description"
 msgstr "Descripción"
 
@@ -82,7 +81,7 @@ msgstr "Electrónico"
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__email
 msgid "Email"
-msgstr "Correo"
+msgstr "Correo electrónico"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__family
@@ -90,26 +89,30 @@ msgid "Family"
 msgstr "Familia"
 
 #. module: music_school_nacho
-#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_student_view_form
-msgid "Generate reference"
-msgstr ""
-
-#. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__id
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: music_school_nacho
 #: model:ir.actions.act_window,name:music_school_nacho.music_school_instrument_action
-#: model:ir.ui.menu,name:music_school_nacho.music_school_instrument_menu
 #: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_form
 msgid "Instrument"
 msgstr "Instrumento"
 
 #. module: music_school_nacho
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_form
+msgid "Instrument Description"
+msgstr "Descripción del instrumento"
+
+#. module: music_school_nacho
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_form
+msgid "Instrument maintenance"
+msgstr "Mantenimiento de instrumentos"
+
+#. module: music_school_nacho
 #: model:ir.model,name:music_school_nacho.model_music_school_instrument
-#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_list
+#: model:ir.ui.menu,name:music_school_nacho.music_school_instrument_menu
 msgid "Instruments"
 msgstr "Instrumentos"
 
@@ -120,36 +123,37 @@ msgstr "Teclado"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__last_maintenance_date
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_form
 msgid "Last Maintenance Date"
-msgstr "Última fecha de mantenimiento"
+msgstr "Fecha del último mantenimiento"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__write_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__write_uid
 msgid "Last Updated by"
-msgstr "Ultima actualizacón por"
+msgstr "Última actualización por"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__write_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización el"
+
+#. module: music_school_nacho
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_form
+msgid "Maintance"
+msgstr "Mantenimiento"
 
 #. module: music_school_nacho
 #: model:res.groups,name:music_school_nacho.group_music_school_manager
 msgid "Manager"
-msgstr ""
-
-#. module: music_school_nacho
-#: model:ir.module.category,name:music_school_nacho.ir_module_music_school_parent
-msgid "Music"
-msgstr "Música"
+msgstr "Gerente"
 
 #. module: music_school_nacho
 #: model:ir.module.category,name:music_school_nacho.ir_module_music_school
 #: model:ir.ui.menu,name:music_school_nacho.music_school_menu
 msgid "Music School"
-msgstr "Escuela de música"
+msgstr "Escuela de Música"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__name
@@ -172,11 +176,6 @@ msgstr "Percusión"
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__phone
 msgid "Phone"
 msgstr "Teléfono"
-
-#. module: music_school_nacho
-#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__reference
-msgid "Reference"
-msgstr "Referencia"
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__user_id
@@ -208,14 +207,19 @@ msgid "Students"
 msgstr "Estudiantes"
 
 #. module: music_school_nacho
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_form
+msgid "Text description"
+msgstr "Escribe una descripción"
+
+#. module: music_school_nacho
 #: model:res.groups,comment:music_school_nacho.group_music_school_manager
 msgid "The manager will be able to create, write and delete records"
-msgstr "El manager será capaz de crear escribir y borrar registros"
+msgstr "El gerente podrá crear, escribir y eliminar registros"
 
 #. module: music_school_nacho
 #: model:res.groups,comment:music_school_nacho.group_music_school_user
 msgid "The user will be able to read records"
-msgstr ""
+msgstr "El usuario podrá leer registros"
 
 #. module: music_school_nacho
 #: model:res.groups,name:music_school_nacho.group_music_school_user
@@ -226,3 +230,9 @@ msgstr "Usuario"
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_instrument__family__wind
 msgid "Wind"
 msgstr "Viento"
+
+#. module: music_school_nacho
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_list
+msgid "instruments"
+msgstr "instrumentos"

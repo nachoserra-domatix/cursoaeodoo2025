@@ -5,7 +5,7 @@ class MusicSchoolInstrument(models.Model):
     _name = 'music.school.instrument'
     _description = 'Instruments'
 
-    name = fields.Char(string="Name", required=True, translate=True)
+    name = fields.Char(string="Name", required=True)
     family = fields.Selection(
         selection=[
             ('string', 'String'),
@@ -26,3 +26,4 @@ class MusicSchoolInstrument(models.Model):
     def instrument_maintenance(self):
         for record in self:
             record.last_maintenance_date = fields.Date.today()
+    
