@@ -1,0 +1,19 @@
+{
+    'name': 'Music School',
+    'version': '18.0.0.0.0',
+    'description': 'La millor escola de música valenciana',
+    'summary': 'Gestió de la millor escola de música',
+    'author': 'Àngel Bernat',
+    'license': 'LGPL-3',
+    'category': 'Music School',
+    'depends': [
+        'base'
+    ],
+    'data':[
+        'security/ir.model.access.csv',
+        'views/music_school_student_views.xml',
+        'views/music_school_menuitems.xml',
+        'views/music_school_instrument_views.xml',
+        
+    ]
+}
