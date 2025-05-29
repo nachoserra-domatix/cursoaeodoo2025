@@ -2,7 +2,7 @@
 
 <odoo>
     <record id="music_school_student_action" model="ir.actions.act_window">
-        <field name="name">Student action</field>
+        <field name="name">Student</field>
         <field name="res_model">music.school.student</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">

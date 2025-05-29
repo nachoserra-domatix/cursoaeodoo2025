@@ -33,6 +33,12 @@ class MusicSchoolInstrument(models.Model):
         string='Last maintenance date',
         help="Date on which the instrument was last serviced"
     )
+    course_id = fields.One2many(
+        comodel_name='music.school.course',
+        inverse_name='instrument_id',
+        string='Courses',
+        help='Courses associated with this instrument'
+    )
 
     def update_maintenance_date(self):
         for record in self:

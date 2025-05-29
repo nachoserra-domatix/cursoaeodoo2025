@@ -19,7 +19,7 @@
                 <field name="name"/>
                 <field name="family" optional="show"/>
                 <field name="state"/>
-                <field name="maintenance_date" optional="show"/>
+                <field name="maintenance_date" optional="hide"/>
                 <field name="manufacturer" optional="hide"/>                
             </list>
         </field>

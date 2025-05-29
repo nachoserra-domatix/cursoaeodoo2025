@@ -2,8 +2,13 @@
 
 <odoo>
 <!--groups-->
+<record id="ir_module_music_school_parent" model="ir.module.category">
+    <field name="name">Music</field>
+</record>
+
 <record id="ir_module_music_school" model="ir.module.category">
     <field name="name">Music School</field>
+    <field name="parent_id" ref="ir_module_music_school_parent"/>
 </record>
 <record id="group_music_school_user" model="res.groups">
     <field name="name">User</field>
