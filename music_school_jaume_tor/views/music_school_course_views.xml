@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- Courses -->
+<record id="music_school_course_action" model="ir.actions.act_window">
+    <field name="name">Courses</field>
+    <field name="res_model">music.school.course</field>
+    <field name="view_mode">list,form</field>
+    <field name="context">{}</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create your first course</p>
+    </field>
+</record>
+
+<record id="music_school_course_view_list" model="ir.ui.view">
+    <field name="name">music.school.course.view.list</field>
+    <field name="model">music.school.course</field>
+    <field name="arch" type="xml">
+        <list string="Courses">
+            <field name="name"/>
+            <field name="state"/>
+            <field name="professor_id" optional="show"/>
+            <field name="instrument_id" optional="show"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+        </list>
+    </field>
+</record>
+
+<record id="music_school_course_view_form" model="ir.ui.view">
+    <field name="name">music.school.course.view.form</field>
+    <field name="model">music.school.course</field>
+    <field name="arch" type="xml">
+        <form string="Course">
+            <header>
+                <button string="Set to Draft" name="action_set_draft" type="object" class="btn-secondary"/>
+                <button string="Set to In Progress" name="action_set_in_progress" type="object" class="btn-primary"/>
+                <button string="Set to Finished" name="action_set_done" type="object" class="btn-success"/>
+            </header>
+            <sheet>
+                <div class="oe_title">
+                    <h1><field name="name" placeholder="Course"/></h1>
+                </div>
+                <group>
+                    <field name="description"/>
+                    <field name="state" readonly="1"/>
+                    <field name="professor_id"/>
+                    <field name="instrument_id"/>
+                    <field name="level"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="capacity"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+</odoo>

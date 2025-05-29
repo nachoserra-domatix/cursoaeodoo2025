@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-29 08:45+0000\n"
-"PO-Revision-Date: 2025-05-29 08:45+0000\n"
+"POT-Creation-Date: 2025-05-29 16:24+0000\n"
+"PO-Revision-Date: 2025-05-29 16:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,9 +36,63 @@ msgid "Birthdate"
 msgstr "Fecha de nacimiento"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__capacity
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__capacity
+msgid "Capacity"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.model,name:music_school_jaume_tor.model_music_school_classroom
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__classroom_id
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_classroom_view_form
+msgid "Classroom"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.actions.act_window,name:music_school_jaume_tor.music_school_classroom_action
+#: model:ir.ui.menu,name:music_school_jaume_tor.menu_classroom
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_classroom_view_list
+msgid "Classrooms"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.model,name:music_school_jaume_tor.model_music_school_course
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__course_id
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_course_view_form
+msgid "Course"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.actions.act_window,name:music_school_jaume_tor.music_school_course_action
+#: model:ir.ui.menu,name:music_school_jaume_tor.menu_course
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_course_view_list
+msgid "Courses"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model_terms:ir.actions.act_window,help:music_school_jaume_tor.music_school_classroom_action
+msgid "Create your first classroom"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model_terms:ir.actions.act_window,help:music_school_jaume_tor.music_school_course_action
+msgid "Create your first course"
+msgstr ""
+
+#. module: music_school_jaume_tor
 #: model_terms:ir.actions.act_window,help:music_school_jaume_tor.music_school_instrument_action
 msgid "Create your first instrument"
 msgstr "Crea tu primer instrumento"
+
+#. module: music_school_jaume_tor
+#: model_terms:ir.actions.act_window,help:music_school_jaume_tor.music_school_lesson_action
+msgid "Create your first lesson"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model_terms:ir.actions.act_window,help:music_school_jaume_tor.music_school_professor_action
+msgid "Create your first professor"
+msgstr ""
 
 #. module: music_school_jaume_tor
 #: model_terms:ir.actions.act_window,help:music_school_jaume_tor.music_school_student_action
@@ -46,13 +100,21 @@ msgid "Create your first student"
 msgstr "Crea tu primer estudiante"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__create_uid
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__create_uid
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__create_uid
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__create_uid
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__create_uid
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__create_date
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__create_date
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__create_date
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__create_date
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__create_date
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__create_date
 msgid "Created on"
 msgstr "Creado el"
@@ -63,16 +125,31 @@ msgid "Date of the last maintenance performed on the instrument"
 msgstr "Fecha ultimo mentenimiento"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__description
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__description
 #: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_instrument_view_form
 msgid "Description"
 msgstr "Descripción"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__display_name
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__display_name
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__display_name
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__display_name
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__display_name
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields.selection,name:music_school_jaume_tor.selection__music_school_course__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__duration
+msgid "Duration (hours)"
+msgstr ""
 
 #. module: music_school_jaume_tor
 #: model:ir.model.fields.selection,name:music_school_jaume_tor.selection__music_school_instrument__family__electronic
@@ -80,9 +157,15 @@ msgid "Electronic"
 msgstr "Electrónico"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__email
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__email
 msgid "Email"
 msgstr "Correo electrónico"
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__date_end
+msgid "End Date"
+msgstr ""
 
 #. module: music_school_jaume_tor
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__family
@@ -90,18 +173,33 @@ msgid "Family"
 msgstr "Familia"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields.selection,name:music_school_jaume_tor.selection__music_school_course__state__done
+msgid "Finished"
+msgstr ""
+
+#. module: music_school_jaume_tor
 #: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_student_view_form
 msgid "Generate reference"
 msgstr "Generar referencia"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__id
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__id
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__id
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__id
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__id
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__id
 msgid "ID"
 msgstr ""
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields.selection,name:music_school_jaume_tor.selection__music_school_course__state__in_progress
+msgid "In Progress"
+msgstr ""
+
+#. module: music_school_jaume_tor
 #: model:ir.actions.act_window,name:music_school_jaume_tor.music_school_instrument_action
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__instrument_id
 #: model:ir.ui.menu,name:music_school_jaume_tor.music_school_instrument_menu
 #: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_instrument_view_form
 msgid "Instrument"
@@ -129,16 +227,47 @@ msgid "Last Maintenance Date"
 msgstr "Último mantenimiento"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__write_uid
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__write_uid
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__write_uid
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__write_uid
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__write_uid
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__write_uid
 msgid "Last Updated by"
 msgstr "Última modificación por"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__write_date
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__write_date
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__write_date
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__write_date
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__write_date
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__write_date
 msgid "Last Updated on"
 msgstr "Última modificación el"
+
+#. module: music_school_jaume_tor
+#: model:ir.model,name:music_school_jaume_tor.model_music_school_lesson
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_lesson_view_form
+msgid "Lesson"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.actions.act_window,name:music_school_jaume_tor.music_school_lesson_action
+#: model:ir.ui.menu,name:music_school_jaume_tor.menu_lesson
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_lesson_view_list
+msgid "Lessons"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__level
+msgid "Level"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__location
+msgid "Location"
+msgstr ""
 
 #. module: music_school_jaume_tor
 #: model:res.groups,name:music_school_jaume_tor.group_music_school_manager
@@ -157,12 +286,16 @@ msgid "Music School"
 msgstr "Escuela de música"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_classroom__name
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__name
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__name
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__name
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__name
 msgid "Name"
 msgstr "Nombre"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__notes
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__notes
 #: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_student_view_form
 msgid "Notes"
@@ -179,9 +312,25 @@ msgid "Percussion"
 msgstr "Percusión"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_professor__phone
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__phone
 msgid "Phone"
 msgstr "Teléfono"
+
+#. module: music_school_jaume_tor
+#: model:ir.model,name:music_school_jaume_tor.model_music_school_professor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__professor_id
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__professor_id
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_professor_view_form
+msgid "Professor"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.actions.act_window,name:music_school_jaume_tor.music_school_professor_action
+#: model:ir.ui.menu,name:music_school_jaume_tor.menu_professor
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_professor_view_list
+msgid "Professors"
+msgstr ""
 
 #. module: music_school_jaume_tor
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__reference
@@ -197,6 +346,36 @@ msgstr "Responsable"
 #: model:ir.model.fields,help:music_school_jaume_tor.field_music_school_student__user_id
 msgid "Responsible user for this student"
 msgstr "Usuario responsable de este estudiante"
+
+#. module: music_school_jaume_tor
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_course_view_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_course_view_form
+msgid "Set to Finished"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_course_view_form
+msgid "Set to In Progress"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__date_start
+msgid "Start Date"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_lesson__start_datetime
+msgid "Start Date and Time"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_course__state
+msgid "Status"
+msgstr ""
 
 #. module: music_school_jaume_tor
 #: model:ir.model.fields.selection,name:music_school_jaume_tor.selection__music_school_instrument__family__string

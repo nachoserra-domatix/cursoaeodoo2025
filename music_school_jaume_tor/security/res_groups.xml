@@ -37,4 +37,5 @@
     <field name="groups" eval="[(4, ref('group_music_school_manager'))]"/>
 </record>
 
+
 </odoo>
