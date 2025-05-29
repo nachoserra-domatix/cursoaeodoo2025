@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class MusicSchoolStudent(models.Model):
     _name = 'music.school.student'
     _description = 'Students'
@@ -27,4 +28,3 @@ class MusicSchoolStudent(models.Model):
     def generate_reference(self):
         for record in self:
             record.reference = f"ESC-{record.id}{record.name}"
-            

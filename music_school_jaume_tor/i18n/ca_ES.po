@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-28 13:57+0000\n"
-"PO-Revision-Date: 2025-05-28 13:57+0000\n"
+"POT-Creation-Date: 2025-05-29 08:41+0000\n"
+"PO-Revision-Date: 2025-05-29 08:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,13 @@ msgid "Created on"
 msgstr "Creat el"
 
 #. module: music_school_jaume_tor
+#: model:ir.model.fields,help:music_school_jaume_tor.field_music_school_instrument__last_maintenance_date
+msgid "Date of the last maintenance performed on the instrument"
+msgstr "Data de l'últim manteniment"
+
+#. module: music_school_jaume_tor
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__description
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_instrument_view_form
 msgid "Description"
 msgstr "Descripció"
 
@@ -84,26 +90,43 @@ msgid "Family"
 msgstr "Família"
 
 #. module: music_school_jaume_tor
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_student_view_form
+msgid "Generate reference"
+msgstr "Genera referència"
+
+#. module: music_school_jaume_tor
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__id
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: music_school_jaume_tor
 #: model:ir.actions.act_window,name:music_school_jaume_tor.music_school_instrument_action
 #: model:ir.ui.menu,name:music_school_jaume_tor.music_school_instrument_menu
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_instrument_view_form
 msgid "Instrument"
 msgstr "Instrument"
 
 #. module: music_school_jaume_tor
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_instrument_view_form
+msgid "Instrument maintenance"
+msgstr "Manteniment"
+
+#. module: music_school_jaume_tor
 #: model:ir.model,name:music_school_jaume_tor.model_music_school_instrument
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_instrument_view_list
 msgid "Instruments"
-msgstr "Instruments"
+msgstr ""
 
 #. module: music_school_jaume_tor
 #: model:ir.model.fields.selection,name:music_school_jaume_tor.selection__music_school_instrument__family__keyboard
 msgid "Keyboard"
 msgstr "Teclat"
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__last_maintenance_date
+msgid "Last Maintenance Date"
+msgstr "Últim manteniment"
 
 #. module: music_school_jaume_tor
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_instrument__write_uid
@@ -123,6 +146,11 @@ msgid "Manager"
 msgstr "Gestor"
 
 #. module: music_school_jaume_tor
+#: model:ir.module.category,name:music_school_jaume_tor.ir_module_music_school_parent
+msgid "Music"
+msgstr "Músic"
+
+#. module: music_school_jaume_tor
 #: model:ir.module.category,name:music_school_jaume_tor.ir_module_music_school
 #: model:ir.ui.menu,name:music_school_jaume_tor.music_school_menu
 msgid "Music School"
@@ -138,7 +166,12 @@ msgstr "Nom"
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__notes
 #: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_student_view_form
 msgid "Notes"
-msgstr "Notes"
+msgstr ""
+
+#. module: music_school_jaume_tor
+#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_instrument_view_form
+msgid "Observations"
+msgstr "Observacions"
 
 #. module: music_school_jaume_tor
 #: model:ir.model.fields.selection,name:music_school_jaume_tor.selection__music_school_instrument__family__percussion
@@ -149,6 +182,11 @@ msgstr "Percussió"
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__phone
 msgid "Phone"
 msgstr "Telèfon"
+
+#. module: music_school_jaume_tor
+#: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__reference
+msgid "Reference"
+msgstr "Referència"
 
 #. module: music_school_jaume_tor
 #: model:ir.model.fields,field_description:music_school_jaume_tor.field_music_school_student__user_id
@@ -198,8 +236,3 @@ msgstr "Usuari"
 #: model:ir.model.fields.selection,name:music_school_jaume_tor.selection__music_school_instrument__family__wind
 msgid "Wind"
 msgstr "Vent"
-
-#. module: music_school_jaume_tor
-#: model_terms:ir.ui.view,arch_db:music_school_jaume_tor.music_school_student_view_form
-msgid "Generate reference"
-msgstr "Genera referència"
