@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_lesson_view_form" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.form</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <form string="Lesson">
+                <sheet>
+                    <group>
+                        <field name="teacher_id" />
+                        <field name="course_id" />
+                        <field name="classroom_id"/>
+                        <field name="datetime_init"/>
+                        <field name="duration"/>
+                    </group>
+                    <notebook>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="music_school_lesson_view_list" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.list</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <list string="Lesson">
+                <field name="teacher_id" />
+                <field name="course_id" />
+                <field name="classroom_id"/>
+                <field name="datetime_init"/>
+                <field name="duration"/>
+            </list>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_instrument_view_form" model="ir.ui.view">
+        <field name="name">music.school.instrument.view.form</field>
+        <field name="model">music.school.instrument</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="family" />
+                        <div class="o_row">
+                            <field name="last_revision_date" />
+                            <button string="Reviewed" name="set_last_revision_date" type="object" class="btn-secondary btn-sm" icon="fa-refresh" />
+                        </div>
+                    </group>
+                    <notebook>
+                        <page string="Instrument description">
+                            <field name="description" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="music_school_instrument_view_list" model="ir.ui.view">
+        <field name="name">music.school.instrument.view.list</field>
+        <field name="model">music.school.instrument</field>
+        <field name="arch" type="xml">
+            <list string="Instrument list">
+                <field name="name" />
+                <field name="family" />
+                <field name="last_revision_date" />
+            </list>
+        </field>
+    </record>
+
+</odoo>

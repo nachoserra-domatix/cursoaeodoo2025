@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_course_view_form" model="ir.ui.view">
+        <field name="name">music.school.course.view.form</field>
+        <field name="model">music.school.course</field>
+        <field name="arch" type="xml">
+            <form string="Course">
+                <header>
+                    <button name="change_course_state_draft" type="object" string="Change state to Draft"  invisible="state in ('draft')" class="btn-success"/>
+                    <button name="change_course_state_progress" type="object" string="Change state to In progress"  invisible="state in ('progress')" class="btn-info"/>
+                    <button name="change_course_state_finished" type="object" string="Change state to Finished" invisible="state in ('finished')" class="btn-danger"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="level" widget="priority"/>
+                        <field name="name" string="Name"/>
+                        <field name="teacher_id" />
+                        <field name="instrument_id" />
+                        <field name="date_ini"/>
+                        <field name="date_end"/>
+                        <field name="capacity"/>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="music_school_course_view_list" model="ir.ui.view">
+        <field name="name">music.school.course.view.list</field>
+        <field name="model">music.school.course</field>
+        <field name="arch" type="xml">
+            <list string="Courses">
+                <field name="level" widget="priority"/>
+                <field name="date_ini"/>
+                <field name="date_end"/>
+                <field name="name" string="Name"/>
+                <field name="teacher_id"/>
+                <field name="instrument_id"/>
+                <field name="capacity"/>
+            </list>
+        </field>
+    </record>
+</odoo>
