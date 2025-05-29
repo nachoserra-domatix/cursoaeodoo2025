@@ -10,3 +10,13 @@ class MusicSchoolStudent(models.Model):
    phone = fields.Char(string="Phone")
    birthdate = fields.Date(string="Birthdate")
    age = fields.Integer(string="Age")
+   user_id = fields.Many2one(
+      comodel_name='res.users',
+      string="Responsible",
+      help="Responsible user for this student"
+   )
+
+   notes = fields.Html(
+      string="Notes",
+      help="Additional notes about the student"
+   )
