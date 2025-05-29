@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <!-- Acción -->
+  <record id="action_music_school_base_student" model="ir.actions.act_window">
+    <field name="name">Students</field>
+    <field name="res_model">music.school.base.student</field>
+    <field name="view_mode">list,form</field>
+    <field name="context">{}</field>
+    <field name="help" type="html">
+    <p class="o_view_nocontent_smiling_face">
+        <b>Create a student</b>
+    </p>
+    </field>
+  </record>
+
+  <!-- Vista formulario -->
+  <record id="view_music_school_base_student_form" model="ir.ui.view">
+    <field name="name">music.school.base.student.form</field>
+    <field name="model">music.school.base.student</field>
+    <field name="arch" type="xml">
+      <form string="Student">
+        <sheet>
+          <group>
+            <group>
+              <div class="oe_title">
+                    <h1>
+                        <field name="name" placeholder="Student"/>
+                    </h1>
+              </div>
+            <field name="phone"/>
+            <field name="birthdate"/>
+            <field name="active"/>
+            </group>
+            <group>
+            <field name="studentimage" widget="image"/>            
+            </group>
+          </group>
+             <notebook>
+                    <page string="Notes">
+                        <field name="notes"/>
+                    </page>
+                </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Vista lista -->
+  <record id="view_music_school_base_student_list" model="ir.ui.view">
+    <field name="name">music.school.base.student.list</field>
+    <field name="model">music.school.base.student</field>
+    <field name="arch" type="xml">
+      <list string="Students">
+        <field name="name"/>
+        <field name="phone"/>
+        <field name="birthdate"/>
+        <field name="active" optional="show"/>        
+      </list>
+    </field>
+  </record>
+</odoo>
