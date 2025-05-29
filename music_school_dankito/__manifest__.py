@@ -18,5 +18,9 @@
         'views/music_school_menu.xml',
         'views/music_school_student_view.xml',
         'views/music_school_instrument_view.xml',
+        'views/music_school_teacher_view.xml',
+        'views/music_school_classroom_view.xml',
+        'views/music_school_course_view.xml',
+        'views/music_school_lesson_view.xml',
     ]
 }

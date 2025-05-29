@@ -16,6 +16,7 @@
                         <field name="email" />
                         <field name="phone" />
                         <field name="birthday" />
+                        <field name="age" />
                         <field name="user_id" />
                     </group>
                 </sheet>

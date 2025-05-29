@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-28 15:46+0000\n"
-"PO-Revision-Date: 2025-05-28 17:53+0200\n"
+"POT-Creation-Date: 2025-05-29 15:42+0000\n"
+"PO-Revision-Date: 2025-05-29 17:46+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -28,32 +28,128 @@ msgid "Birthday"
 msgstr "Fecha de nacimiento"
 
 #. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__capacity
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_classroom_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_classroom_view_list
+msgid "Capacity"
+msgstr "Capacidad"
+
+#. module: music_school_dankito
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_course_view_form
+#, fuzzy
+msgid "Change state to Draft"
+msgstr "Factura borrador"
+
+#. module: music_school_dankito
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_course_view_form
+msgid "Change state to Finished"
+msgstr "Cambiar estado a finalizado"
+
+#. module: music_school_dankito
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_course_view_form
+msgid "Change state to In progress"
+msgstr "Cambiar estado a “en progreso”"
+
+#. module: music_school_dankito
+#: model:ir.actions.act_window,name:music_school_dankito.music_school_classroom_menu_action
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__classroom_id
+#: model:ir.ui.menu,name:music_school_dankito.music_school_classroom
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_classroom_view_form
+msgid "Classroom"
+msgstr "Clase"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__capacity
+msgid "Classroom max. students capacity"
+msgstr "Capacidad máxima de estudiantes"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__name
+#, fuzzy
+msgid "Classroom name"
+msgstr "Nombre del instrumento"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__course_id
+#: model:ir.ui.menu,name:music_school_dankito.music_school_course
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_course_view_form
+msgid "Course"
+msgstr "Curso"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__state
+msgid "Course current status"
+msgstr "Estado actual del curso"
+
+#. module: music_school_dankito
+#: model:ir.actions.act_window,name:music_school_dankito.music_school_course_menu_action
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_course_view_list
+msgid "Courses"
+msgstr "Cursos"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__create_uid
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__create_uid
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__create_uid
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__create_uid
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__create_uid
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__create_date
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__create_date
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__create_date
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__create_date
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__create_date
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__description
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__description
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_course_view_form
 msgid "Description"
 msgstr "Descripción"
 
 #. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__display_name
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__display_name
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__display_name
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__display_name
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__display_name
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__display_name
+#, fuzzy
 msgid "Display Name"
 msgstr "Nombre de visualización"
 
 #. module: music_school_dankito
+#: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_course__state__draft
+#, fuzzy
+msgid "Draft"
+msgstr "Factura borrador"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__duration
+#, fuzzy
+msgid "Duration in hours"
+msgstr "Duración"
+
+#. module: music_school_dankito
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__email
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__email
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_teacher_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_teacher_view_list
 msgid "Email"
 msgstr "Email"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__date_end
+#, fuzzy
+msgid "End date"
+msgstr "Fecha de vencimiento"
 
 #. module: music_school_dankito
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__family
@@ -61,15 +157,51 @@ msgid "Family"
 msgstr "Familia"
 
 #. module: music_school_dankito
+#: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_course__state__finished
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: music_school_dankito
 #: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_student_view_form
 msgid "Generate code"
 msgstr "Generar código"
 
 #. module: music_school_dankito
+#: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_course__level__3
+msgid "High"
+msgstr "Alta"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__id
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__id
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__id
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__id
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__id
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__id
 msgid "ID"
 msgstr "ID"
+
+#. module: music_school_dankito
+#: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_course__state__progress
+msgid "In progress"
+msgstr "En progreso"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__datetime_init
+msgid "Init DateTime"
+msgstr "Fecha y hora de inicio"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__date_ini
+#, fuzzy
+msgid "Init date"
+msgstr "Fecha de la llamada"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__instrument_id
+#, fuzzy
+msgid "Instrument"
+msgstr "Instrumento de la Escuela de Música"
 
 #. module: music_school_dankito
 #: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_instrument_view_form
@@ -93,21 +225,60 @@ msgid "Instruments"
 msgstr "Instrumentos"
 
 #. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__write_uid
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__write_uid
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__write_uid
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__write_uid
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__write_uid
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__write_uid
+#, fuzzy
 msgid "Last Updated by"
-msgstr ""
+msgstr "Fecha de última revisión"
 
 #. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__write_date
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__write_date
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__write_date
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__write_date
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__write_date
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__write_date
+#, fuzzy
 msgid "Last Updated on"
-msgstr ""
+msgstr "Fecha de última revisión"
 
 #. module: music_school_dankito
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_instrument__last_revision_date
 msgid "Last revision date"
 msgstr "Fecha de última revisión"
+
+#. module: music_school_dankito
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_lesson_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_lesson_view_list
+msgid "Lesson"
+msgstr "Lección"
+
+#. module: music_school_dankito
+#: model:ir.actions.act_window,name:music_school_dankito.music_school_lesson_menu_action
+#: model:ir.ui.menu,name:music_school_dankito.music_school_lessons
+msgid "Lessons"
+msgstr "Lecciones"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__level
+msgid "Level"
+msgstr "Nivel"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_classroom__location
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_classroom_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_classroom_view_list
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: music_school_dankito
+#: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_course__level__1
+msgid "Low"
+msgstr "Baja"
 
 #. module: music_school_dankito
 #: model:res.groups,name:music_school_dankito.group_music_school_manager
@@ -121,19 +292,74 @@ msgid "Music School"
 msgstr "Escuela de Música"
 
 #. module: music_school_dankito
+#: model:ir.model,name:music_school_dankito.model_music_school_classroom
+#, fuzzy
+msgid "Music School Classroom"
+msgstr "Estudiante de Escuela de Música"
+
+#. module: music_school_dankito
+#: model:ir.model,name:music_school_dankito.model_music_school_course
+#, fuzzy
+msgid "Music School Course"
+msgstr "Estudiante de Escuela de Música"
+
+#. module: music_school_dankito
 #: model:ir.model,name:music_school_dankito.model_music_school_instrument
 msgid "Music School Instrument"
 msgstr "Instrumento de la Escuela de Música"
 
 #. module: music_school_dankito
+#: model:ir.model,name:music_school_dankito.model_music_school_lesson
+#, fuzzy
+msgid "Music School Lessons"
+msgstr "Estudiante de Escuela de Música"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__name
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__name
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__name
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_classroom_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_classroom_view_list
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_course_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_course_view_list
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_teacher_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_teacher_view_list
 msgid "Name"
 msgstr "Nombre"
+
+#. module: music_school_dankito
+#: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_course__level__0
+msgid "None"
+msgstr "Ninguna"
+
+#. module: music_school_dankito
+#: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_course__level__2
+msgid "Normal"
+msgstr "Normal"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__notes
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_lesson_view_form
+msgid "Notes"
+msgstr "Notas"
 
 #. module: music_school_dankito
 #: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_instrument__family__percussion
 msgid "Percussion"
 msgstr "Percusión"
+
+#. module: music_school_dankito
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_teacher_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_teacher_view_list
+#, fuzzy
+msgid "Phone"
+msgstr "Número de teléfono"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_teacher__phone
+#, fuzzy
+msgid "Phone Number"
+msgstr "Número de teléfono"
 
 #. module: music_school_dankito
 #: model:ir.model.fields,field_description:music_school_dankito.field_music_school_student__phone
@@ -166,6 +392,12 @@ msgid "School Music Student"
 msgstr "Estudiante de Escuela de Música"
 
 #. module: music_school_dankito
+#: model:ir.model,name:music_school_dankito.model_music_school_teacher
+#, fuzzy
+msgid "School Music Teacher"
+msgstr "Estudiante de Escuela de Música"
+
+#. module: music_school_dankito
 #: model:ir.model.fields.selection,name:music_school_dankito.selection__music_school_instrument__family__string
 msgid "String"
 msgstr "Cuerda"
@@ -181,7 +413,22 @@ msgstr "Estudiante"
 #. module: music_school_dankito
 #: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_student_view_list
 msgid "Students list"
-msgstr "Listado estudiante"
+msgstr "Listado estudiantes"
+
+#. module: music_school_dankito
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_course__teacher_id
+#: model:ir.model.fields,field_description:music_school_dankito.field_music_school_lesson__teacher_id
+#: model:ir.ui.menu,name:music_school_dankito.music_school_teacher
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_classroom_view_list
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_teacher_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_dankito.music_school_teacher_view_list
+msgid "Teacher"
+msgstr "Profesor"
+
+#. module: music_school_dankito
+#: model:ir.actions.act_window,name:music_school_dankito.music_school_teacher_menu_action
+msgid "Teachers"
+msgstr "Profesores"
 
 #. module: music_school_dankito
 #: model:res.groups,name:music_school_dankito.group_music_school_user

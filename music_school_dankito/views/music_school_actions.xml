@@ -7,10 +7,41 @@
         <field name="view_mode">list,form</field>
     </record>
 
+     <record id="music_school_teacher_menu_action" model="ir.actions.act_window">
+        <field name="name">Teachers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">music.school.teacher</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
     <record id="music_school_instrument_menu_action" model="ir.actions.act_window">
         <field name="name">Instruments</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">music.school.instrument</field>
         <field name="view_mode">list,form</field>
     </record>
+
+    <record id="music_school_course_menu_action" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">music.school.course</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="music_school_classroom_menu_action" model="ir.actions.act_window">
+        <field name="name">Classroom</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">music.school.classroom</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="music_school_lesson_menu_action" model="ir.actions.act_window">
+        <field name="name">Lessons</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">music.school.lesson</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+
 </odoo>

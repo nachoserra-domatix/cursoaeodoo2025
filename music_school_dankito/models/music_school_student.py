@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 from datetime import  date
 
 class MusicSchoolStudent(models.Model):
@@ -11,6 +11,7 @@ class MusicSchoolStudent(models.Model):
     name = fields.Char(string="Name")
     phone = fields.Char(string="Phone number")
     birthday = fields.Date(string="Birthday")
+    age = fields.Integer(string="Age", compute="_compute_age")
 
     user_id = fields.Many2one(
         string="Responsible",
@@ -19,6 +20,17 @@ class MusicSchoolStudent(models.Model):
     )
 
     reference = fields.Char(string="Reference")
+
+    @api.depends('birthday')
+    def _compute_age(self):
+        today = date.today()
+        for record in self:
+            if record.birthday:
+                record.age = today.year - record.birthday.year - (
+                        (today.month, today.day) < (record.birthday.month, record.birthday.day)
+                )
+            else:
+                record.age = 0
 
     def generate_code(self):
         year = date.today().year
