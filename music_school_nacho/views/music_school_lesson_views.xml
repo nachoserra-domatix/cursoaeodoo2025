@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="music_school_lesson_action" model="ir.actions.act_window">
+        <field name="name">Lesson</field>
+        <field name="res_model">music.school.lesson</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create your first lesson
+             </p>
+        </field>
+    </record>
+
+    <record id="music_school_lesson_view_tree" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.tree</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <list string="Lesson">
+                <field name="date"/>
+                <field name="teacher_id"/>
+                <field name="course_id" optional="show"/>
+                <field name="room_id" optional="show"/>
+                <field name="duration" optional="hide"/>
+                <field name="notes" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="music_school_lesson_view_form" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.form</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <form string="lesson">
+                <sheet>
+                <div class="oe_title">
+                    <h1>
+                        <field name="course_id" placeholder="Course"/>
+                    </h1>
+                </div>
+                    <group>
+                    <group>
+                        <field name="teacher_id"/>
+                        <field name="room_id"/>
+                    </group>
+                    <group>
+                        <field name="date"/>
+                        <field name="duration"/>
+                    </group>
+                        
+                    </group>
+                    <notebook>
+                        <page name="Notes" string="string">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

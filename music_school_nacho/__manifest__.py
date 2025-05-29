@@ -14,6 +14,10 @@
         'security/res_groups.xml',
         'views/music_school_student_views.xml',
         'views/music_school_instrument_views.xml',
+        'views/music_school_teacher_views.xml',
+        'views/music_school_course_views.xml',
+        'views/music_school_room_views.xml',
+        'views/music_school_lesson_views.xml',
         'views/music_school_menuitems.xml',
     ]
 }
