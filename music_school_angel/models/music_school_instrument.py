@@ -7,4 +7,5 @@ class MusicSchoolInstrument(models.Model):
    name = fields.Char(string="Name", required=True)
    description = fields.Text(string="Description")
    family = fields.Selection([('Cuerda', 'Cuerda'), ('Viento', 'Viento'), ('Percusion', 'Percusión')], string="Family", default='Viento')
+   last_maintenance = fields.Date(string="Last Maintenance")
    

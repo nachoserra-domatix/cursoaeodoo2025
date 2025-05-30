@@ -21,6 +21,7 @@
             <field name="name"/>
             <field name="family" optional="show"/>           
             <field name="description" optional="hide"/>
+            <field name="last_maintenance"/>
         </list>
     </field>
 </record>
@@ -40,7 +41,10 @@
                 <group>
                     <group>
                         <field name="family"/>
-                    </group>                    
+                    </group>
+                    <group>
+                        <field name="last_maintenance"/>
+                    </group>                        
                 </group>
                 <notebook>
                     <page string="Description">
