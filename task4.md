@@ -20,6 +20,8 @@ Añadir calendario donde aparezca el nombre del curso.
 # Filter domain
 Añadir un filter_domain para el campo name del search de profesor, que consista en filtrar por instrumento.
 
+# Añadir domain
+Poder seleccionar solo profesores que tengan el mismo nivel que el curso que se va a dar (añadir campo level en profesor)
 # Deberes
 
 ## Modelo clase/lección
