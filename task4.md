@@ -18,7 +18,7 @@ Profesor y capacidad de medida en vista de clase/lección
 Añadir calendario donde aparezca el nombre del curso.
 
 # Filter domain
-Añadir un filter_domain para el campo name del search de profesor, que consista en filtrar por instrumento.
+Añadir un filter_domain para el campo instrumento del search de curso, que consista en filtrar por instrumento.
 
 # Añadir domain
 Poder seleccionar solo profesores que tengan el mismo nivel que el curso que se va a dar (añadir campo level en profesor)
