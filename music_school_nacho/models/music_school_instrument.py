@@ -6,6 +6,11 @@ class MusicSchoolInstrument(models.Model):
     _description = 'Instruments'
 
     name = fields.Char(string="Name", required=True, translate=True)
+    family_id = fields.Many2one(
+        comodel_name='music.school.instrument.family',
+        string="Family",
+        help="Family of the instrument"
+    )
     family = fields.Selection(
         selection=[
             ('string', 'String'),
