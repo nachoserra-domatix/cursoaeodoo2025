@@ -6,7 +6,7 @@ class MusicSchoolInstrument(models.Model):
 
    name = fields.Char(string="Name", required=True)
    description = fields.Text(string="Description")
-   family = fields.Selection([('Cuerda', 'Cuerda'), ('Viento', 'Viento'), ('Percusion', 'Percusión')], string="Family", default='Viento')
+   family = fields.Selection([('string', 'String'), ('wind', 'Wind'), ('percussion', 'Percussion')], string="Family", default='wind')
    last_maintenance = fields.Date(string="Last Maintenance")
 
    def instrument_maintenance(self):
