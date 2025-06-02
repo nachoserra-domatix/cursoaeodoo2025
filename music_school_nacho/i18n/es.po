@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-29 16:23+0000\n"
-"PO-Revision-Date: 2025-05-29 16:23+0000\n"
+"POT-Creation-Date: 2025-06-02 15:35+0000\n"
+"PO-Revision-Date: 2025-06-02 15:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -47,6 +47,7 @@ msgstr "Notas adiciones sobre el estudiante"
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_course__level__advanced
+#: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_teacher__level__advanced
 msgid "Advanced"
 msgstr ""
 
@@ -57,6 +58,7 @@ msgstr "Edad"
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_course__level__beginner
+#: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_teacher__level__beginner
 msgid "Beginner"
 msgstr ""
 
@@ -72,10 +74,24 @@ msgid "Capacity"
 msgstr ""
 
 #. module: music_school_nacho
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__color
+msgid "Color"
+msgstr ""
+
+#. module: music_school_nacho
+#: model:ir.model.fields,help:music_school_nacho.field_music_school_course__color
+msgid "Color associated with the course for calendar views"
+msgstr ""
+
+#. module: music_school_nacho
 #: model:ir.actions.act_window,name:music_school_nacho.music_school_course_action
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_lesson__course_id
 #: model:ir.ui.menu,name:music_school_nacho.music_school_course_menu
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_calendar
 #: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_form
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_graph
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_pivot
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_search
 #: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_tree
 #: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_lesson_view_form
 msgid "Course"
@@ -124,6 +140,7 @@ msgstr ""
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__create_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__create_uid
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument_family__create_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_lesson__create_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_room__create_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__create_uid
@@ -134,6 +151,7 @@ msgstr "Creado por"
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__create_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__create_date
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument_family__create_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_lesson__create_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_room__create_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__create_date
@@ -167,6 +185,11 @@ msgid "Date when the course starts"
 msgstr ""
 
 #. module: music_school_nacho
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__description
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__description
 #: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_form
@@ -177,6 +200,7 @@ msgstr "Descripción"
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__display_name
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__display_name
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument_family__display_name
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_lesson__display_name
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_room__display_name
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__display_name
@@ -186,6 +210,7 @@ msgstr "Nombre mostrado"
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_course__state__draft
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_search
 msgid "Draft"
 msgstr ""
 
@@ -200,7 +225,13 @@ msgid "Duration of the lesson in hours"
 msgstr ""
 
 #. module: music_school_nacho
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_kanban
+msgid "Edit"
+msgstr ""
+
+#. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_instrument__family__electronic
+#: model:music.school.instrument.family,name:music_school_nacho.music_school_family_electronic
 msgid "Electronic"
 msgstr "Electrónico"
 
@@ -217,8 +248,14 @@ msgstr ""
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__family
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__family_id
 msgid "Family"
 msgstr "Familia"
+
+#. module: music_school_nacho
+#: model:ir.model.fields,help:music_school_nacho.field_music_school_instrument__family_id
+msgid "Family of the instrument"
+msgstr ""
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_course__state__finished
@@ -231,13 +268,24 @@ msgid "Generate reference"
 msgstr ""
 
 #. module: music_school_nacho
+#: model:music.school.instrument.family,name:music_school_nacho.music_school_family_guitar
+msgid "Guitar"
+msgstr ""
+
+#. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__id
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__id
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument_family__id
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_lesson__id
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_room__id
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__id
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_teacher__id
 msgid "ID"
+msgstr ""
+
+#. module: music_school_nacho
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_search
+msgid "In Progress"
 msgstr ""
 
 #. module: music_school_nacho
@@ -265,17 +313,20 @@ msgstr ""
 
 #. module: music_school_nacho
 #: model:ir.model,name:music_school_nacho.model_music_school_instrument
+#: model:ir.model,name:music_school_nacho.model_music_school_instrument_family
 #: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_instrument_view_list
 msgid "Instruments"
 msgstr "Instrumentos"
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_course__level__intermediate
+#: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_teacher__level__intermediate
 msgid "Intermediate"
 msgstr ""
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_instrument__family__keyboard
+#: model:music.school.instrument.family,name:music_school_nacho.music_school_family_keyboard
 msgid "Keyboard"
 msgstr "Teclado"
 
@@ -287,6 +338,7 @@ msgstr "Última fecha de mantenimiento"
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__write_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__write_uid
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument_family__write_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_lesson__write_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_room__write_uid
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__write_uid
@@ -297,6 +349,7 @@ msgstr "Ultima actualizacón por"
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__write_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__write_date
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument_family__write_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_lesson__write_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_room__write_date
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__write_date
@@ -318,6 +371,8 @@ msgstr ""
 
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__level
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_teacher__level
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_search
 msgid "Level"
 msgstr ""
 
@@ -355,6 +410,7 @@ msgstr "Escuela de música"
 #. module: music_school_nacho
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__name
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument__name
+#: model:ir.model.fields,field_description:music_school_nacho.field_music_school_instrument_family__name
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_room__name
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_student__name
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_teacher__name
@@ -375,6 +431,7 @@ msgstr ""
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_instrument__family__percussion
+#: model:music.school.instrument.family,name:music_school_nacho.music_school_family_percussion
 msgid "Percussion"
 msgstr "Percusión"
 
@@ -435,6 +492,7 @@ msgstr ""
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_instrument__family__string
+#: model:music.school.instrument.family,name:music_school_nacho.music_school_family_string
 msgid "String"
 msgstr "Cuerda"
 
@@ -457,6 +515,7 @@ msgstr "Estudiantes"
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_course__teacher_id
 #: model:ir.model.fields,field_description:music_school_nacho.field_music_school_lesson__teacher_id
 #: model:ir.ui.menu,name:music_school_nacho.music_school_teacher_menu
+#: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_course_view_search
 #: model_terms:ir.ui.view,arch_db:music_school_nacho.music_school_teacher_view_form
 msgid "Teacher"
 msgstr ""
@@ -493,6 +552,7 @@ msgstr "Usuario"
 
 #. module: music_school_nacho
 #: model:ir.model.fields.selection,name:music_school_nacho.selection__music_school_instrument__family__wind
+#: model:music.school.instrument.family,name:music_school_nacho.music_school_family_wind
 msgid "Wind"
 msgstr "Viento"
 

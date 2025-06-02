@@ -30,6 +30,7 @@ class MusicSchoolCourse(models.Model):
     )
     level = fields.Selection(
         selection=[
+            ('none', 'None'),
             ('beginner', 'Beginner'),
             ('intermediate', 'Intermediate'),
             ('advanced', 'Advanced'),
