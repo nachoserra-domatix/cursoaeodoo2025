@@ -3,6 +3,7 @@ from odoo import models, fields
 class MusicSchoolLesson(models.Model):
     _name = "music.school.lesson"
     _description = "Music School Lesson"
+    # _rec_name = "name"
 
     name = fields.Char(string="Name", required=True)
     notes = fields.Html(string="Description", help="Details about the lesson")
@@ -22,3 +23,23 @@ class MusicSchoolLesson(models.Model):
         string="Classroom",
         help="Classroom where the lesson takes place"
     )
+    color = fields.Integer(
+        string="Color",
+        help="Color for the lesson in calendar views"
+    )
+    state = fields.Selection(
+        selection =[
+            ('draft','Draft'),
+            ('in progress','In Progress'),
+            ('completed','Completed')
+        ],
+        string="State"
+        ,default='draft',
+        group_expand='group_expand_state',
+    )
+    duration = fields.Float(
+        string="Duration (hours)",
+        help="Duration of the lesson in hours"
+    )
+    def group_expand_state(self, states, domain):
+        return [key for key, val in type(self).state.selection]

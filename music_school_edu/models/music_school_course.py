@@ -13,6 +13,8 @@ class MusicSchoolCourse(models.Model):
             ('completed','Completed')
         ],
         string="State"
+        ,default='draft',
+        group_expand='group_expand_state',
     )
     teacher_id = fields.Many2one(
         comodel_name="music.school.teacher",
@@ -55,6 +57,10 @@ class MusicSchoolCourse(models.Model):
         string="Capacity",
         help="Maximum number of students allowed in the course"
     )
+    color = fields.Integer(
+        string="Color",
+        help="Color for the course in the calendar view"
+    )
 
     def update_state_complete(self):
         for record in self:
@@ -65,3 +71,5 @@ class MusicSchoolCourse(models.Model):
     def update_state_draft(self):
         for record in self:
             record.state = 'draft'
+    def group_expand_state(self, states, domain):
+        return [key for key, val in type(self).state.selection]

@@ -4,7 +4,7 @@
     <record id="music_school_lesson_action" model="ir.actions.act_window">
         <field name="name">Lesson</field>
         <field name="res_model">music.school.lesson</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,kanban,form,pivot,graph,calendar</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first lesson record.
@@ -44,6 +44,7 @@
                     </group>
                     <group>
                         <field name="date"/>
+                        <field name="duration" widget="float_time"/>
                     </group>
                     </group>                   
                 </sheet>
@@ -53,6 +54,83 @@
                     </page>
                 </notebook>
             </form>
+        </field>
+    </record>
+
+    <record id="music_school_lesson_view_kanban" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.kanban</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <kanban highlight_color="color" default_group_by="state" class="o_kanban_small_column" on_create="quick_create">
+            <field name="teacher_id"/>
+            <field name="course_id"/>
+            <field name="classroom_id"/>
+                <templates>
+                    <t t-name="menu">
+                        <t t-if="widget.editable"><a role="menuitem" type="open" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                        <field name="color" widget="kanban_color_picker"/> 
+                    </t>
+                    <t t-name="card">
+                        <field name="course_id" class="fw-bold fs-5"/>
+                        <field name="date"/>
+                        <field name="classroom_id"/>
+                        <footer>
+                            <!-- <div class="d-flex mt-auto align-items-center">
+                                <field name="level" widget="priority" class="me-2"/>
+                            </div> -->
+                            <field name="teacher_id" widget="many2one_avatar_user" class="ms-auto"/>                           
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+     <record id="music_school_lesson_view_pivot" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.pivot</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <pivot string="lesson">
+                <field name="teacher_id" type="row"/>
+                <field name="course_id" type="col"/>
+                <field name="duration" widget="float_time" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="music_school_lesson_view_graph" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.graph</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <graph string="lesson" type="bar">
+                <field name="teacher_id"/>
+                <field name="classroom_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="music_school_lesson_view_calendar" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.calendar</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <calendar string="lesson" date_start="date" color="teacher_id">
+                <field name="name"/>
+                <field name="teacher_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="music_school_lesson_view_search" model="ir.ui.view">
+        <field name="name">music.school.lesson.view.search</field>
+        <field name="model">music.school.lesson</field>
+        <field name="arch" type="xml">
+            <search string="Course">
+                <field name="name" filter_domain="['|',('teacher_id', 'ilike', self),('name','ilike',self)]"/>
+                <field name="teacher_id"/>
+                <field name="classroom_id"/>
+                <field name="course_id"/>
+            </search>
         </field>
     </record>
 </odoo>

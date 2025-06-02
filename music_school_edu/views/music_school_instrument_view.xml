@@ -17,7 +17,8 @@
         <field name="arch" type="xml">
             <list multi_edit="1" string="Instruments">
                 <field name="name"/>
-                <field name="family" optional="show"/>
+                <field name="family_id" optional="show"/>
+                <!-- <field name="family" optional="show"/> -->
                 <field name="state"/>
                 <field name="maintenance_date" optional="hide"/>
                 <field name="manufacturer" optional="hide"/>                
@@ -39,7 +40,8 @@
                         </h1>
                     </div>
                     <group>
-                        <field name="family"/>
+                        <field name="family_id"/>
+                        <!-- <field name="family"/> -->
                         <field name="state"/>
                         <field name="manufacturer"/>
                         <field name="maintenance_date" readonly="1"/>

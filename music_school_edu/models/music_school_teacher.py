@@ -21,3 +21,12 @@ class MusicSchoolTeacher(models.Model):
         string="Lessons",
         help="Lessons conducted by the teacher"
     )
+    level = fields.Selection(
+        selection=[
+            ('beginner', 'Beginner'),
+            ('intermediate', 'Intermediate'),
+            ('advanced', 'Advanced')
+        ],
+        string="Level",
+        default='beginner',
+    )
