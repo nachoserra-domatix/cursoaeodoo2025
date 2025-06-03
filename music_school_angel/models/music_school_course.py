@@ -34,6 +34,11 @@ class MusicSchoolCourse(models.Model):
    end_date = fields.Date(string="End Date")
    capacity = fields.Integer(string="Capacity")
 
+   color = fields.Integer(
+        string="Color",
+        help="Color associated with the course for calendar views"
+    )
+
 #
    def action_draft(self):
       for record in self:

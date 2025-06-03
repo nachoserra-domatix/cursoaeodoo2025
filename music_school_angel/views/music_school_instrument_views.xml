@@ -19,7 +19,8 @@
     <field name="arch" type="xml">
         <list multi_edit="1" string="Instruments">
             <field name="name"/>
-            <field name="family" optional="show"/>           
+            <field name="family_id" optional="show"/>
+                <!-- <field name="family" optional="show"/> -->          
             <field name="description" optional="hide"/>
             <field name="last_maintenance"/>
         </list>
@@ -43,7 +44,8 @@
                 </div>
                 <group>
                     <group>
-                        <field name="family"/>
+                        <field name="family_id"/>
+                        <!-- <field name="family" widget="radio"/> -->
                     </group>
                     <group>
                         <field name="last_maintenance"/>

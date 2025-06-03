@@ -21,7 +21,8 @@
         <list multi_edit="1" string="Professors">
             <field name="name"/>
             <field name="email" optional="show"/>
-            <field name="phone" optional="show"/>          
+            <field name="phone" optional="show"/>
+            <field name="level"/>        
         </list>
     </field>
 </record>
@@ -45,6 +46,7 @@
                     <group>
                         <field name="email"/>
                         <field name="phone"/>
+                        <field name="level"/>
                     </group>                    
                 </group>
             </sheet>

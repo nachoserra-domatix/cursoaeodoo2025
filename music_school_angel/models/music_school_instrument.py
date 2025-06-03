@@ -6,7 +6,13 @@ class MusicSchoolInstrument(models.Model):
 
    name = fields.Char(string="Name", required=True)
    description = fields.Text(string="Description")
-   family = fields.Selection([('string', 'String'), ('wind', 'Wind'), ('percussion', 'Percussion')], string="Family", default='wind')
+   #family = fields.Selection([('string', 'String'), ('wind', 'Wind'), ('percussion', 'Percussion')], string="Family", default='wind')
+   family_id = fields.Many2one(
+        comodel_name='music.school.instrument.family',
+        string="Family",
+        help="Family of the instrument"
+    )
+    
    last_maintenance = fields.Date(string="Last Maintenance")
 
    def instrument_maintenance(self):
