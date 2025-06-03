@@ -15,9 +15,9 @@
 
 * En un curso, botón que permita crear una clase de ese curso.
 
-* En un curso, botón que genere etiquetas en base a la descripción. Que los busque si ya existen esas etiquetas, después se asignan y si no las crea y las asigna.
+* En un curso, botón que busque a los estudiantes y los asigne al curso
 
 # Deberes
-* Crear un campo boolean en instrumento de "mantenimiento" que se ponga a True si hay fecha de mantenimiento
+* Crear un campo boolean en instrumento de "reparado" que se ponga a True si hay fecha de mantenimiento
 * Campo relacional en estudiante que coja el correo electrónico del contacto
-* Desde un curso, marcar todas las lecciones de ese curso como finalizadas
+* Desde un curso, marcar todas las lecciones de ese curso como finalizadas (se puede usar el botón de action_finish o uno propio)
