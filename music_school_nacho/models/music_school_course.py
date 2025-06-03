@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, Command
 
 
 class MusicSchoolCourse(models.Model):
@@ -57,6 +57,12 @@ class MusicSchoolCourse(models.Model):
         help="Color associated with the course for calendar views"
     )
 
+    student_ids = fields.Many2many(
+        comodel_name='music.school.student',
+        string="Students",
+        help="Students enrolled in the course"
+    )
+
     def action_draft(self):
         for record in self:
             record.state = 'draft'
@@ -71,3 +77,22 @@ class MusicSchoolCourse(models.Model):
     
     def group_expand_state(self, states, domain):
         return [key for key, val in type(self).state.selection]
+
+    def create_lesson(self):
+        vals = {
+            'course_id': self.id,
+            'teacher_id': self.teacher_id.id,
+        }
+        lesson = self.env['music.school.lesson'].create(vals)
+    
+    def assign_students(self):
+        for record in self:
+            students = self.env['music.school.student'].search([])
+            if students:
+                #record.student_ids = [(6, 0, students.ids)]
+                #record.write({'student_ids': [(6, 0, students.ids)]})
+                record.student_ids = students
+                #record.student_ids = [Command.set(students.ids)]
+                #record.write({
+                #     'student_ids': [Command.set(student.ids)]
+                # })

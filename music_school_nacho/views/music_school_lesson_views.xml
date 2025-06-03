@@ -73,6 +73,10 @@
                 <filter name="date" string="Date" context="{'group_by': 'date'}" />
                 <filter name="room" string="Room" context="{'group_by': 'room_id'}" />
                 <filter name="teacher" string="Teacher" context="{'group_by': 'teacher_id'}" />
+                <filter name="filter_yesterday" string="Ayer"
+                    domain="[('date', '&gt;=', (context_today() - relativedelta(days=1)).strftime('%%Y-%%m-%%d 00:00:00')),
+                         ('date', '&lt;', context_today().strftime('%%Y-%%m-%%d 00:00:00'))]"/>
+
             </search>
         </field>
     </record>
