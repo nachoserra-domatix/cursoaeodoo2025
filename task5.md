@@ -7,10 +7,6 @@
 * Añadir campo de contacto (partner_id)
 * Añadir un campo en Estudiante que muestre el teléfono del contacto
 
-# Campo calculado guardado en base de datos
-
-* Crear un campo calculado sea la duración en días del curso a partir de la fecha de inicio y fecha de fin
-
 # ORM
 
 * En un curso, botón que permita crear una clase de ese curso.
@@ -19,5 +15,6 @@
 
 # Deberes
 * Crear un campo boolean en instrumento de "reparado" que se ponga a True si hay fecha de mantenimiento
+* Crear un campo calculado que sea la duración en días del curso a partir de la fecha de inicio y fecha de fin
 * Campo relacional en estudiante que coja el correo electrónico del contacto
 * Desde un curso, marcar todas las lecciones de ese curso como finalizadas (se puede usar el botón de action_finish o uno propio)
