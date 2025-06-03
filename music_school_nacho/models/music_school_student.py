@@ -12,7 +12,7 @@ class MusicSchoolStudent(models.Model):
         string="Partner",
         help="Partner associated with this student"
     )
-    email = fields.Char(string="Email")
+    email = fields.Char(string="Email", related="partner_id.email", store=True, readonly=False)
     phone = fields.Char(string="Phone", related="partner_id.phone", store=True, readonly=False)
     birthdate = fields.Date(string="Birthdate")
     age = fields.Integer(string="Age", compute='_compute_age', store=True)

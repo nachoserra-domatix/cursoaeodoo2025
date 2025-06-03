@@ -61,6 +61,7 @@
                         <group>
                             <field name="start_date"/>
                             <field name="end_date"/>
+                            <field name="day_duration"/>
                             <field name="capacity"/>
                         </group>
                     </group>

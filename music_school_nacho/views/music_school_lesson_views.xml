@@ -25,6 +25,7 @@
                 <field name="room_id" optional="show"/>
                 <field name="duration" widget="float_time" optional="hide"/>
                 <field name="notes" optional="hide"/>
+                <field name="state" optional="show"/>
             </list>
         </field>
     </record>
@@ -34,6 +35,9 @@
         <field name="model">music.school.lesson</field>
         <field name="arch" type="xml">
             <form string="lesson">
+            <header>
+            <field name="state" widget="statusbar"/>
+            </header>
                 <sheet>
                 <div class="oe_title">
                     <h1>
