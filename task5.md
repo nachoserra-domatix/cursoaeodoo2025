@@ -1,6 +1,5 @@
 # Campos calculados
 
-* Crear campo Asignado en Estudiante, el cual comprobará: Si hay responsable, asignado pasa a ser True y si no lo hay estará a False
 * Calcular la edad del estudiante a partir del campo fecha de nacimiento
 
 # Campos relacionales
