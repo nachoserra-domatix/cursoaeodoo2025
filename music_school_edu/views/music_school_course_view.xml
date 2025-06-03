@@ -38,6 +38,8 @@
                 <button string="Change to draft" invisible="state in('draft')" name="update_state_draft" type="object" class="oe_highlight"/>
                 <button string="Change to in progress" invisible="state in('in progress')" name="update_state_in_progress" type="object" class="oe_highlight"/>
                 <button string="Change to complete" invisible="state in('completed')" name="update_state_complete" type="object" class="oe_highlight"/>
+                <button string="Create lesson" name="create_lesson" type="object" class="oe_highlight"/>
+                <button string="Import Students" name="assign_student" type="object" class="oe_highlight"/>
             </header>
                 <sheet>
                     <div class="oe_title">
@@ -55,8 +57,17 @@
                         <field name="instrument_id"/>
                         <field name="start_date"/>
                         <field name="end_date"/>
+                        <field name="course_duration" />
                     </group>
-                    </group>                   
+                    </group> 
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Students">
+                            <field name="student_ids"/>
+                        </page>
+                    </notebook>                  
                 </sheet>
             </form>
         </field>

@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields , api
 
 class MusicSchoolInstrument(models.Model):
     _name = 'music.school.instrument'
@@ -44,7 +44,20 @@ class MusicSchoolInstrument(models.Model):
         string='Courses',
         help='Courses associated with this instrument'
     )
-
+    repair = fields.Boolean(
+        string='Repair',
+        help='Indicates if the instrument is under repair',
+        compute='repair_instrument',
+        store=True,
+    )
     def update_maintenance_date(self):
         for record in self:
             record.maintenance_date = fields.Date.today()
+            
+    @api.depends('maintenance_date')
+    def repair_instrument(self):
+        for record in self:
+            if record.maintenance_date:
+                record.repair = True
+            else:
+                record.repair = False

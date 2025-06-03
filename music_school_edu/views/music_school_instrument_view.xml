@@ -45,6 +45,7 @@
                         <field name="state"/>
                         <field name="manufacturer"/>
                         <field name="maintenance_date" readonly="1"/>
+                        <field name="repair"/>
                     </group>
                     <notebook>
                         <page string="Description">

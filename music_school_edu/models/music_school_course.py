@@ -1,4 +1,4 @@
-from odoo import models , fields
+from odoo import models , fields , api
 
 class MusicSchoolCourse(models.Model):
     _name = "music.school.course"
@@ -61,10 +61,35 @@ class MusicSchoolCourse(models.Model):
         string="Color",
         help="Color for the course in the calendar view"
     )
+    student_ids = fields.Many2many(
+        comodel_name="music.school.student",
+        string="Students",
+        help="Students enrolled in the course"
+    )
+    course_duration = fields.Integer(
+        string="Course Duration (days)",
+        help="Duration of the course in days",
+        compute="_compute_course_duration",
+        store=True
+    )
+
+    @api.depends('start_date', 'end_date')
+    def _compute_course_duration(self):
+        for record in self:
+            if record.start_date and record.end_date:
+                duration = (record.end_date - record.start_date).days
+                record.course_duration = duration
+            else:
+                record.course_duration = 0
+
 
     def update_state_complete(self):
+        lessons = self.env['music.school.lesson'].search([])
         for record in self:
             record.state = 'completed'
+        for lesson in lessons:
+            lesson.state = 'completed'
+            
     def update_state_in_progress(self):
         for record in self:
             record.state = 'in progress'
@@ -73,3 +98,18 @@ class MusicSchoolCourse(models.Model):
             record.state = 'draft'
     def group_expand_state(self, states, domain):
         return [key for key, val in type(self).state.selection]
+    def create_lesson(self):
+        vals= {
+            'name':self.name + " Lesson",
+            'course_id': self.id,
+            'teacher_id': self.teacher_id.id,        
+        }
+        lesson = self.env['music.school.lesson'].create(vals)
+
+    def assign_student(self):
+        for record in self:
+            students = self.env['music.school.student'].search([])
+            if students:
+                record.student_ids = [(6, 0, students.ids)]
+                # record.student_ids = students 
+                # record.student_ids = [Command.set(students.ids)]

@@ -30,6 +30,9 @@
         <field name="model">music.school.lesson</field>
         <field name="arch" type="xml">
             <form string="">
+            <header>
+                <field name="state" options="{'clickable':0}" widget="statusbar"/>
+            </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -125,11 +128,16 @@
         <field name="name">music.school.lesson.view.search</field>
         <field name="model">music.school.lesson</field>
         <field name="arch" type="xml">
-            <search string="Course">
-                <field name="name" filter_domain="['|',('teacher_id', 'ilike', self),('name','ilike',self)]"/>
-                <field name="teacher_id"/>
-                <field name="classroom_id"/>
-                <field name="course_id"/>
+            <search string="Lesson">
+                <field name="name" filter_domain="['|',('teacher_id', 'ilike', self),('name','ilike',self)]"/> 
+                <field name="course_id" string="Course"/>
+                <field name="teacher_id" string="Teacher"/>
+                <field name="classroom_id" string="Classroom"/>
+                <filter name="not_assigned" string="Not Assigned" domain="[('teacher_id', '=', False)]"/>
+                <filter name="not_assigned_classroom" string="Not Assigned Classroom" domain="[('classroom_id','=', False)]"/>
+                <filter name="date" string="Date" context="{'group_by': 'date'}" />
+                <filter name="classroom" string="Classroom" context="{'group_by': 'classroom_id'}" />
+                <filter name="teacher" string="Teacher" context="{'group_by': 'teacher_id'}" />
             </search>
         </field>
     </record>
