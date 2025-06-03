@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <!-- Menú principal -->
+  <menuitem id="menu_music_school_base_root"
+            name="Music School"
+            sequence="10" />
+
+  <!-- Submenú: Estudiantes -->
+  <menuitem id="menu_music_school_base_student"
+            name="Students"
+            parent="menu_music_school_base_root"
+            action="action_music_school_base_student"
+            sequence="20" />
+  <!-- Submenú: instrument -->
+  <menuitem id="menu_music_school_base_instrument"
+            name="Instruments"
+            parent="menu_music_school_base_root"
+            action="action_music_school_base_instrument"
+            sequence="20"/>
+</odoo>
