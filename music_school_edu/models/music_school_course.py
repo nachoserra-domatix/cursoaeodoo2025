@@ -39,12 +39,15 @@ class MusicSchoolCourse(models.Model):
     )
     level = fields.Selection(
         selection=[
+            ('none', 'None'),
             ('beginner', 'Beginner'),
             ('intermediate', 'Intermediate'),
-            ('advanced', 'Advanced')
+            ('advanced', 'Advanced'),
         ],
-        string="Level"
+        string="Level",
+        default='beginner',
     )
+    
     start_date = fields.Date(
         string="Start Date",
         help="Date when the course starts"
