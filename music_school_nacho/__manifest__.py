@@ -19,6 +19,7 @@
         'views/music_school_course_views.xml',
         'views/music_school_room_views.xml',
         'views/music_school_lesson_views.xml',
+        'views/music_school_lesson_attendance_views.xml',
         'views/music_school_menuitems.xml',
     ]
 }

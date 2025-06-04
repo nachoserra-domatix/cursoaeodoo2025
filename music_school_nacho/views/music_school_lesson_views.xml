@@ -56,7 +56,10 @@
                         
                     </group>
                     <notebook>
-                        <page name="Notes" string="string">
+                        <page name="attendances" string="Attendances">
+                            <field name="attendance_ids" context="{'default_is_present':True,'default_date': date,'list_view_ref': 'music_school_nacho.music_school_lesson_attendance_simple_view_tree'}"/>
+                        </page>
+                        <page name="notes" string="Notes">
                             <field name="notes"/>
                         </page>
                     </notebook>
