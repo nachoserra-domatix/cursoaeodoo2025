@@ -11,7 +11,7 @@ Va a tener un campo de secuencia, estudiante, un check de asistencia y un campo 
 
 # Vista embembida
 
-Vamos a añadir este modelo como vista embebida en cirugía
+Vamos a añadir este modelo como vista embebida en lección
 
 # Contexto
 
