@@ -3,7 +3,7 @@
 En Curso no se debe de poder acceder al profesor ni crear profesores nuevos de manera rápida.
 En Instrumento no se debe de poder crear una familia nueva, solo elegir.
 
-# Modelo nuevo acciones a realizar en una cirugía
+# Modelo nuevo asistencia a realizar en una lección
 
 Vamos a crear por una parte un modelo nuevo llamado asistencia. Este modelo va a ser un one2many para las lecciones.
 
