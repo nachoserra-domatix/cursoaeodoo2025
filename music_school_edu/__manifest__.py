@@ -19,6 +19,7 @@
         'views/music_school_course_view.xml',
         'views/music_school_classroom_view.xml',
         'views/music_school_lesson_view.xml',
+        'views/music_school_lesson_attendance_view.xml',
         'views/music_school_menuitems.xml',
     ],
     'auto_install': False,

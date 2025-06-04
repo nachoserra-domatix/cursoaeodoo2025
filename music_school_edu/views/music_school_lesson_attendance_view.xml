@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_lesson_attendance_action" model="ir.actions.act_window">
+        <field name="name">Lesson Attendance</field>
+        <field name="res_model">music.school.lesson.attendance</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Manage the attendance of students in their music lessons.
+            </p>
+        </field>
+    </record>
+    <record id="music_school_lesson_attendance_view_list" model="ir.ui.view">
+        <field name="name">music.school.lesson.attendance.view.list</field>
+        <field name="model">music.school.lesson.attendance</field>
+        <field name="arch" type="xml">
+            <list string="Lesson Attendance" editable="bottom">
+                <field name="student_id"/>
+                <field name="present"/>
+                <field name="notes" optional="hide"/>
+                <field name="date" optional="show"/>
+            </list>
+        </field>
+    </record>
+    <record id="music_school_lesson_attendance_simple_view_list" model="ir.ui.view">
+        <field name="name">music.school.lesson.attendance.simple.view.list</field>
+        <field name="model">music.school.lesson.attendance</field>
+        <field name="arch" type="xml">
+            <list string="Simple Lesson Attendance" editable="bottom">
+                <field name="student_id"/>
+                <field name="present" widget="boolean_toggle"/>
+                <field name="date"/>
+            </list>
+        </field>
+    </record>
+    <record id="music_school_lesson_attendance_view_form" model="ir.ui.view">
+        <field name="name">music.school.lesson.attendance.view.form</field>
+        <field name="model">music.school.lesson.attendance</field>
+        <field name="arch" type="xml">
+            <form string="Lesson Attendance">
+                <sheet>
+                    <group>
+                        <field name="student_id"/>
+                        <field name="present" widget="boolean_toggle"/>
+                        <field name="notes"/>
+                        <field name="date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

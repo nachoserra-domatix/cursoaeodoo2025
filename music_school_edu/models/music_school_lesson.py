@@ -41,5 +41,12 @@ class MusicSchoolLesson(models.Model):
         string="Duration (hours)",
         help="Duration of the lesson in hours"
     )
+    attendace_ids = fields.One2many(
+        comodel_name="music.school.lesson.attendance",
+        inverse_name="lesson_id",
+        string="Attendance Records",
+        help="Records of student attendance for this lesson"
+    )
+    
     def group_expand_state(self, states, domain):
         return [key for key, val in type(self).state.selection]

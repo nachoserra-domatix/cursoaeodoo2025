@@ -81,13 +81,13 @@ class MusicSchoolCourse(models.Model):
         for record in self:
             if record.start_date and record.end_date:
                 duration = (record.end_date - record.start_date).days
-                record.course_duration = duration
+                record.course_duration = duration + 1
             else:
                 record.course_duration = 0
 
 
     def update_state_complete(self):
-        lessons = self.env['music.school.lesson'].search([])
+        lessons = self.env['music.school.lesson'].search([('course_id', '=', self.id)])
         for record in self:
             record.state = 'completed'
         for lesson in lessons:

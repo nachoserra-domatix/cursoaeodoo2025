@@ -48,16 +48,21 @@ class MusicSchoolInstrument(models.Model):
         string='Repair',
         help='Indicates if the instrument is under repair',
         compute='repair_instrument',
-        store=True,
+        inverse='set_is_repaired',
     )
     def update_maintenance_date(self):
         for record in self:
             record.maintenance_date = fields.Date.today()
             
-    @api.depends('maintenance_date')
+   
     def repair_instrument(self):
         for record in self:
-            if record.maintenance_date:
-                record.repair = True
+            record.repair = bool(record.maintenance_date)
+
+    def set_is_repaired(self):
+        for record in self:
+            if record.repair:
+                record.maintenance_date = fields.Date.today()
             else:
-                record.repair = False
+                record.maintenance_date = False
+            

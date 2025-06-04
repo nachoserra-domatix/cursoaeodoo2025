@@ -45,7 +45,7 @@
                         <field name="state"/>
                         <field name="manufacturer"/>
                         <field name="maintenance_date" readonly="1"/>
-                        <field name="repair"/>
+                        <field name="repair" widget="boolean_toggle"/>
                     </group>
                     <notebook>
                         <page string="Description">

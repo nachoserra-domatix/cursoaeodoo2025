@@ -29,33 +29,37 @@
         <field name="name">music.school.lesson.view.form</field>
         <field name="model">music.school.lesson</field>
         <field name="arch" type="xml">
-            <form string="">
+            <form string="lesson">
             <header>
                 <field name="state" options="{'clickable':0}" widget="statusbar"/>
             </header>
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="lesson Name"/>
-                        </h1>
-                    </div>
-                    <group>
-                    <group>
-                        <field name="teacher_id"/>
-                        <field name="course_id"/>
-                        <field name="classroom_id"/>
-                    </group>
-                    <group>
-                        <field name="date"/>
-                        <field name="duration" widget="float_time"/>
-                    </group>
-                    </group>                   
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="lesson Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                        <group>
+                            <field name="teacher_id"/>
+                            <field name="course_id"/>
+                            <field name="classroom_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="duration" widget="float_time"/>
+                        </group>
+                        </group>                   
+                    
+                    <notebook>
+                        <page name="attendances" string="Attendances">
+                            <field name="attendace_ids" context="{'default_present':True,'default_date': date,'list_view_ref': 'music_school_edu.music_school_lesson_attendance_simple_view_list'}"/>
+                        </page>
+                        <page name="Notes" string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
                 </sheet>
-                <notebook>
-                    <page name="Notes" string="Notes">
-                        <field name="notes"/>
-                    </page>
-                </notebook>
             </form>
         </field>
     </record>
@@ -79,9 +83,6 @@
                         <field name="date"/>
                         <field name="classroom_id"/>
                         <footer>
-                            <!-- <div class="d-flex mt-auto align-items-center">
-                                <field name="level" widget="priority" class="me-2"/>
-                            </div> -->
                             <field name="teacher_id" widget="many2one_avatar_user" class="ms-auto"/>                           
                         </footer>
                     </t>
