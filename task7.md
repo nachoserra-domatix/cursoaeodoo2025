@@ -18,8 +18,7 @@
 * Comentarios del profesor
 
 ## Vistas de examenes y resultados
-* Vista árbol y formulario para las dos, Kanban y pivot para la que querais
-* La vista kanban a vuestro gusto pero intentad añadir la foto de la mascota cuando esté enlazada a una y agrupado por las etapas de adopción
+* Vista árbol y formulario la de examenes y kanban (opcional)
 
 ## Filtros en examenes
 * Filtro para poder buscar por nombre, profesor, instrumento y curso.
@@ -27,9 +26,6 @@
 * Filtro para saber que examenes han finalizado
 * Filtro para saber que examenes todavía no han finalizado.
 * Permitir agrupar por profesor.
-
-## Vistas de citas y lineas:
-* Añadir subtotal y total en los modelos
 
 ## Dominio
 En los resultados, al desplegar el many2one de estudiante NO pueden aparecer estudiantes que no están inscritos al curso
