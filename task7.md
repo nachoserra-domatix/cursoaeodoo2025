@@ -18,7 +18,7 @@
 * Comentarios del profesor
 
 ## Vistas de examenes y resultados
-* Vista árbol y formulario la de examenes y kanban (opcional)
+* Vista árbol y formulario la de examenes y kanban
 
 ## Filtros en examenes
 * Filtro para poder buscar por nombre, profesor, instrumento y curso.
