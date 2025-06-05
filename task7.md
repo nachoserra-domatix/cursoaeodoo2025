@@ -17,11 +17,6 @@
 * Aprobado (bool) / o un selector de suspendido/aprobado
 * Comentarios del profesor
 
-## Modificaciones modelo de mascota
-* Añadir campo de imagen para la foto de mascota
-* Añadir el campo de alergias como many2many
-* Añadir boolean de adoptado
-
 ## Modificaciones modelo lineas de cita
 * Añadir campo subtotal
   
