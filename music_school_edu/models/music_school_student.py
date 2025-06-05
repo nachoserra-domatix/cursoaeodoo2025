@@ -1,0 +1,42 @@
+from odoo import models , fields, api
+
+class MusicSchoolStudent(models.Model):
+    _name = "music.school.student"
+    _description = "music school student"
+
+    name = fields.Char(string="Name" ,required=True)
+    email = fields.Char(string="Email",related ="partner_id.email", store=True, readonly=False)
+    phone = fields.Char(string="Phone number",related ="partner_id.phone", store=True, readonly=False)
+    birthdate = fields.Date(string="Birthdate")
+    age = fields.Integer(string="Age", compute="_compute_age", store=True)
+    active = fields.Boolean(string="Active", default=True)
+    partner_id = fields.Many2one(
+        comodel_name="res.partner",
+        string="Partner",
+        help="Partner associated with this student"
+    )
+    notes = fields.Html(
+        string="Notes",
+        help="Additional information about the student"
+    )
+    user_id = fields.Many2one(
+        comodel_name="res.users",
+        string="Responsible",
+        help="Responsible for this student"
+    )
+    reference= fields.Char(string="Reference")
+
+    def generate_reference(self):
+        for record in self:
+            record.reference = f"ESC-{record.id}{record.name[0:3].upper()}"
+    
+    @api.depends('birthdate')
+    def _compute_age(self):
+        from datetime import date
+        for record in self:
+            if record.birthdate:
+                today = date.today()
+                age = today.year - record.birthdate.year - ((today.month, today.day) < (record.birthdate.month, record.birthdate.day))
+                record.age = age
+            else:
+                record.age = 0
