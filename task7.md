@@ -17,12 +17,6 @@
 * Aprobado (bool) / o un selector de suspendido/aprobado
 * Comentarios del profesor
 
-## Modificaciones modelo lineas de cita
-* Añadir campo subtotal
-  
-## Modificaciones modelo de cita
-* Añadir campo de total
-
 ## Vistas de examenes y resultados
 * Vista árbol y formulario para las dos, Kanban y pivot para la que querais
 * La vista kanban a vuestro gusto pero intentad añadir la foto de la mascota cuando esté enlazada a una y agrupado por las etapas de adopción
