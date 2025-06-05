@@ -21,6 +21,7 @@
     <menuitem id="music_school_room_menu" name="Room" action="music_school_room_action" sequence="50"/>
     <menuitem id="music_school_lesson_menu" name="Lesson" action="music_school_lesson_action" sequence="60"/>
     <menuitem id="music_school_lesson_attendance_menu" name="Attendance" action="music_school_lesson_attendance_action" sequence="70"/>
+    <menuitem id="music_school_exam_menu" name="Exams" action="music_school_exam_action" sequence="80"/>
 
 
 </menuitem>
