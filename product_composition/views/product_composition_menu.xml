@@ -1,0 +1,13 @@
+<odoo>
+    <record id="action_product_composition_description" model="ir.actions.act_window">
+        <field name="name">Composition Descriptions</field>
+        <field name="res_model">product.composition.description</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_product_composition_description"
+              name="• Composition Descriptions"
+              parent="product.menu_product_config"
+              action="action_product_composition_description"/>
+</odoo>
+
