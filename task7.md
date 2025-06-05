@@ -27,9 +27,9 @@
 * Filtro para saber que examenes todavía no han finalizado.
 * Permitir agrupar por profesor.
 
-## Dominio
-En los resultados, al desplegar el many2one de estudiante NO pueden aparecer estudiantes que no están inscritos al curso
-
 # Campos calculados
 * Calcular en el modelo de resultados si el estudiante ha aprobado o no
 * Botón en exámenes que al pusarlo genere los resultados de aquellos estudiantes que están en ese curso
+
+## Dominio
+En los resultados, al desplegar el many2one de estudiante NO pueden aparecer estudiantes que no están inscritos al curso
