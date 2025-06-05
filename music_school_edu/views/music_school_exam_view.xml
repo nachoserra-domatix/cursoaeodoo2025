@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_exam_action" model="ir.actions.act_window">
+        <field name="name">Exams</field>
+        <field name="res_model">music.school.exam</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Manage the exams for students in their music courses.
+            </p>
+        </field>
+    </record>
+    <record id="music_school_exam_view_list" model="ir.ui.view">
+        <field name="name">music.school.exam.view.list</field>
+        <field name="model">music.school.exam</field>
+        <field name="arch" type="xml">
+            <list string="Exams">
+                <field name="instrument_id"/>
+                <field name="teacher_id"/>
+                <field name="course_id"/>
+                <field name="date"/>
+                <field name="min_note" optional="hide"/>
+                <field name="max_note" optional="hide"/>
+            </list>
+        </field>
+    </record>
+     <record id="music_school_exam_view_form" model="ir.ui.view">
+        <field name="name">music.school.exam.view.form</field>
+        <field name="model">music.school.exam</field>
+        <field name="arch" type="xml">
+            <form string="Exam">
+                <header>
+                    <field name="exam_state" widget="statusbar"/>
+                    <button string="Assign students" name="assign_students" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                <div class="oe_title">
+                    <h1>
+                        <field name="name" placeholder="E.g Flute exam" class="oe_inline"/>
+                    </h1>
+                </div>
+                <group>
+                    <group>
+                        <field name="course_id"/>
+                        <field name="date"/>
+                        <field name="teacher_id"/>
+                    </group>
+
+                    <group>
+                        <field name="instrument_id"/>
+                        <field name="min_note"/>
+                        <field name="max_note"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page name="results" string="Results">
+                        <field name="result_ids">
+                            <list editable="bottom" string="Results">
+                                <field name="student_id" domain="[('id','in', elegible_student_ids)]"/>
+                                <field name="note"/>
+                                <field name="passed" widget="boolean_toggle"/>
+                            </list>
+                        </field>
+                        
+                    </page>
+                </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="music_school_exam_view_kanban" model="ir.ui.view">
+        <field name="name">music.school.exam.view.kanban</field>
+        <field name="model">music.school.exam</field>
+        <field name="arch" type="xml">
+             <kanban highlight_color="color" default_group_by="exam_state" class="o_kanban_small_column" on_create="quick_create">
+                <templates>
+                    <t t-name="menu">
+                        <t t-if="widget.editable"><a role="menuitem" type="open" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                        <field name="color" widget="kanban_color_picker"/> 
+                    </t>
+                    <t t-name="card">
+                        <field name="name" class="fw-bold fs-5"/>
+                        <field name="instrument_id" class=""/>
+                        <field name="course_id" class=""/>
+                        <field name="date"/>
+                        <footer>
+                            <field name="teacher_id" widget="many2one_avatar_user" class="ms-auto"/>   
+                        </footer>    
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="music_school_exam_view_search" model="ir.ui.view">
+        <field name="name">music.school.exam.view.search</field>
+        <field name="model">music.school.exam</field>
+        <field name="arch" type="xml">
+            <search string="Course">
+                <field name="name" filter_domain="['|',('course_id', 'ilike', self),('name','ilike',self)]"/>
+                <field name="teacher_id"/>
+                <field name="instrument_id"/>
+                <field name="course_id"/>
+                <filter string="In Progress" name="in_progress" domain="[('exam_state', '=', 'in progress')]"/>
+                <filter string="Completed" name="completed" domain="[('exam_state', '=', 'completed')]"/>
+                <filter string="Level" name="group_by_teacher" context="{'group_by':'teacher_id'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -25,6 +25,11 @@ class MusicSchoolStudent(models.Model):
         help="Responsible for this student"
     )
     reference= fields.Char(string="Reference")
+    course_ids = fields.Many2many(
+        comodel_name="music.school.course",
+        string="Courses",
+        help="Courses that the student is enrolled in"
+    )
 
     def generate_reference(self):
         for record in self:

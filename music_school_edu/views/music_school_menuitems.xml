@@ -9,5 +9,7 @@
         <menuitem id="music_school_class_menu" name="Class" action="music_school_classroom_action" sequence="50"/>
         <menuitem id="music_school_lesson_menu" name="Lesson" action="music_school_lesson_action" sequence="60"/>
         <menuitem id="music_school_lesson_attendance_menu" name="Attendance" action="music_school_lesson_attendance_action" sequence="70"/>
+        <menuitem id="music_school_exam_menu" name="Exam" action="music_school_exam_action" sequence="80"/>
+        <menuitem id="music_school_exam_result_menu" name="Result" action="music_school_exam_resul_action" sequence="90"/>
     </menuitem>
 </odoo>
