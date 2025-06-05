@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_product_template_form_composition" model="ir.ui.view">
+        <field name="name">product.template.form.composition</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Composition">
+                    <field name="composition_line_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="percentage"/>
+                            <field name="description_id" options="{'no_create': True}"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
