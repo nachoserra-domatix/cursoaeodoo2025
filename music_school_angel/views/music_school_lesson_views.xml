@@ -48,8 +48,13 @@
                         <field name="start_datetime" optional="show"/> 
                         <field name="duration" optional="show"/>   
                         <field name="state" optional="show"/>  
-                   </group>
-                   <notebook>
+                    </group>
+                    <notebook>
+                    <page name="attendances" string="Attendances">
+                        <field name="attendance_ids" context="{'default_is_present':True, 'default_date': start_datetime,'list_view_ref': 'music_school_angel.music_school_lesson_attendance_simple_view_tree'}"/>
+                        <!--'default_date': date,-->
+                        <!--field name="attendance_ids"/-->
+                    </page>
                     <page string="Notes">
                         <field name="notes" optional="show"/> 
                     </page>

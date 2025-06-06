@@ -5,3 +5,4 @@ from . import music_school_course
 from . import music_school_classroom
 from . import music_school_lesson
 from . import music_school_instrument_family
+from . import music_school_lesson_attendance
