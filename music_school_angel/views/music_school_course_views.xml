@@ -41,6 +41,8 @@
                 <button string="Action Draft" invisible="state in ('draft')" name="action_draft" type="object" class="btn-secondary"/>
                 <button string="Action In Progress" invisible="state in ('progress')" name="action_progress" type="object" class="btn-sucess"/>
                 <button string="Action Finish" invisible="state in ('finished')" name="action_finish" type="object" class="btn-primary"/>
+                <button string="Create Lesson" name="create_lesson" type="object" class="btn-primary"/>
+                <button string="Assign students" groups="music_school_angel.group_music_school_manager" name="assign_students" type="object" class="btn-secondary"/>
                 <field name="state" options="{'clickable':1}" widget="statusbar"/>
             </header>
             <sheet>
@@ -54,14 +56,20 @@
                         <field name="professor_id" domain="[('level', '=', level)]"/>
                         <field name="instrument_id"/>
                         <field name="level"/>
+                    </group>
+                    <group>    
                         <field name="start_date"/>
                         <field name="end_date"/>
+                        <field name="day_duration"/>
                         <field name="capacity"/>
                     </group>                        
                 </group>
                 <notebook>
                     <page string="Description">
                         <field name="description"/>
+                    </page>
+                    <page string="Students">
+                            <field name="student_ids"/>
                     </page>
                 </notebook>
             </sheet>

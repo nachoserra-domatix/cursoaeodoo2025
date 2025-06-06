@@ -25,6 +25,7 @@
             <field name="start_datetime" optional="show"/> 
             <field name="duration" optional="show"/>   
             <field name="notes" optional="show"/>   
+            <field name="state" optional="show"/>
         </list>
     </field>
 </record>
@@ -34,7 +35,10 @@
     <field name="name">music.school.lesson.view.form</field>
     <field name="model">music.school.lesson</field>
     <field name="arch" type="xml">
-        <form string="Classrooms">
+        <form string="Lessons">
+            <header>
+                <field name="state" widget="statusbar"/>
+            </header>
             <sheet>
                 <group>
                     <group>
@@ -42,7 +46,8 @@
                         <field name="course_id" optional="show"/>
                         <field name="classroom_id" optional="show"/>  
                         <field name="start_datetime" optional="show"/> 
-                        <field name="duration" optional="show"/>     
+                        <field name="duration" optional="show"/>   
+                        <field name="state" optional="show"/>  
                    </group>
                    <notebook>
                     <page string="Notes">

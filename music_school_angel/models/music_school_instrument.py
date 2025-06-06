@@ -15,6 +15,29 @@ class MusicSchoolInstrument(models.Model):
     
    last_maintenance = fields.Date(string="Last Maintenance")
 
+   is_repaired = fields.Boolean(
+        string="Is Repaired",
+        compute='_compute_is_repaired',
+        inverse='_set_is_repaired',
+
+    )
+
+   def _compute_is_repaired(self):
+      for record in self:
+         record.is_repaired = bool(record.last_maintenance)
+         # if record.last_maintenance:
+         #     record.is_repaired = True
+         # else:
+         #     record.is_repaired = False
+    
+   def _set_is_repaired(self):
+      for record in self:
+         if record.is_repaired:
+               record.last_maintenance = fields.Date.today()
+         else:
+               record.last_maintenance = False
+
+
    def instrument_maintenance(self):
       for record in self:
          record.last_maintenance = fields.Date.today(); 
