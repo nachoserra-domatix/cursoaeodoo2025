@@ -1,4 +1,5 @@
 from odoo import models , fields , api
+from odoo.exceptions import UserError
 
 class MusicSchoolCourse(models.Model):
     _name = "music.school.course"
@@ -75,6 +76,25 @@ class MusicSchoolCourse(models.Model):
         compute="_compute_course_duration",
         store=True
     )
+    lesson_count = fields.Integer(
+        string="Lesson Count",
+        compute="_compute_lesson_count",
+        store=True,
+        help="Number of lessons in the course"
+    )
+    _sql_constraints = [
+        ('name_unique', 'UNIQUE(name)', 'The course name must be unique.'),
+        ('end_date_after_start_date', 'CHECK(end_date >= start_date)', 'End date must be after or equal to start date.'),
+    ]
+    @api.constrains('capacity')
+    def _check_capacity(self):
+        for record in self:
+            if record.capacity < 0:
+                raise UserError("Capacity cannot be negative.")
+    def _compute_lesson_count(self):
+        for record in self:
+            record.lesson_count = self.env['music.school.lesson'].search_count([('course_id','=', record.id)])
+            
 
     @api.depends('start_date', 'end_date')
     def _compute_course_duration(self):
@@ -116,3 +136,19 @@ class MusicSchoolCourse(models.Model):
                 record.student_ids = [(6, 0, students.ids)]
                 # record.student_ids = students 
                 # record.student_ids = [Command.set(students.ids)]
+
+    def action_view_lesson(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Lessons',
+            'res_model': 'music.school.lesson',
+            'view_mode': 'list,form',
+            'domain': [('course_id', '=', self.id)],
+            'context': {'default_course_id': self.id},
+        }
+
+    def finish_courses(self):
+        courses = self.env['music.school.course'].search([('state', '!=', 'completed'),('end_date', '<=', fields.Date.today(self))])
+        for course in courses:
+            course.state = 'completed'
+        

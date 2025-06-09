@@ -7,7 +7,9 @@ class MusicSchoolLesson(models.Model):
 
     name = fields.Char(string="Name", required=True)
     notes = fields.Html(string="Description", help="Details about the lesson")
-    date = fields.Datetime(string="Date", help="Date when the lesson is scheduled")
+    date = fields.Datetime(string="Date", 
+            help="Date when the lesson is scheduled",
+            default=lambda self: fields.Datetime.now())
     course_id = fields.Many2one(
         comodel_name="music.school.course",
         string="Course",

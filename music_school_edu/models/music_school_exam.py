@@ -58,3 +58,10 @@ class MusicSchoolExam(models.Model):
     def assign_students(self):
         students = self.course_id.student_ids
         self.result_ids = [(0, 0, {'student_id': student.id}) for student in students]
+
+    def finish_exams(self):
+        exams = self.env['music.school.exam'].search([('exam_state', '!=', 'completed')])
+        for exam in exams:
+            if exam.date and exam.date < fields.Datetime.now():
+                exam.exam_state = 'completed'
+            

@@ -5,7 +5,7 @@ class MusicSchoolStudent(models.Model):
     _description = "music school student"
 
     name = fields.Char(string="Name" ,required=True)
-    email = fields.Char(string="Email",related ="partner_id.email", store=True, readonly=False)
+    email = fields.Char(string="Email")
     phone = fields.Char(string="Phone number",related ="partner_id.phone", store=True, readonly=False)
     birthdate = fields.Date(string="Birthdate")
     age = fields.Integer(string="Age", compute="_compute_age", store=True)
@@ -22,7 +22,9 @@ class MusicSchoolStudent(models.Model):
     user_id = fields.Many2one(
         comodel_name="res.users",
         string="Responsible",
-        help="Responsible for this student"
+        help="Responsible for this student",
+        copy=False,
+        default=lambda self: self.env.user
     )
     reference= fields.Char(string="Reference")
     course_ids = fields.Many2many(
@@ -30,6 +32,12 @@ class MusicSchoolStudent(models.Model):
         string="Courses",
         help="Courses that the student is enrolled in"
     )
+
+    @api.onchange('partner_id')
+    def _onchange_partner_id(self):
+        if self.partner_id:
+            self.email = self.partner_id.email
+            self.phone = self.partner_id.phone
 
     def generate_reference(self):
         for record in self:

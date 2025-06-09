@@ -18,3 +18,7 @@ class MusicSchoolClassroom(models.Model):
         string="Lessons",
         help="Lessons scheduled in this classroom"
     )
+    _sql_constraints = [
+        ('name_unique', 'UNIQUE(name)', 'The classroom name must be unique.'),
+        ('capacity_positive', 'CHECK(capacity > 0)', 'The capacity must be a positive number.')
+    ]

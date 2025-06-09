@@ -10,6 +10,7 @@
         'base'
     ],
     'data': [
+        'data/ir_cron.xml',
         'data/music_school_data.xml',
         'security/ir.model.access.csv',
         'security/res_groups.xml',
