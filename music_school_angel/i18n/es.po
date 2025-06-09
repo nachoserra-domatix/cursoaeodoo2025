@@ -280,6 +280,7 @@ msgid "Last Updated on"
 msgstr "Última actualización el"
 
 #. module: music_school_angel
+#: model:ir.actions.act_window,name:music_school_angel.music_school_lesson_action
 #: model:ir.model,name:music_school_angel.model_music_school_lesson
 #: model:ir.ui.menu,name:music_school_angel.music_school_lesson_menu
 #: model_terms:ir.ui.view,arch_db:music_school_angel.music_school_lesson_view_list
@@ -407,7 +408,6 @@ msgid "Student"
 msgstr "Estudiante"
 
 #. module: music_school_angel
-#: model:ir.actions.act_window,name:music_school_angel.music_school_lesson_action
 #: model:ir.actions.act_window,name:music_school_angel.music_school_student_action
 #: model:ir.model,name:music_school_angel.model_music_school_student
 #: model:ir.ui.menu,name:music_school_angel.music_school_student_menu
