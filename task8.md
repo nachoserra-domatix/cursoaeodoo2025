@@ -19,7 +19,6 @@
 # Deberes
 * Un @api.constrains que impida que puedas tener una fecha de de fin de curso anterior a la fecha de inicio
 * _sql_constrains en el nombre de habitación, que sea único
-* Un onchange al cambiar el profesor del curso, que el campo level se ponga según el que tenga el prfesor.
 * Hacer un smartbutton para que en curso aparezcan las lecciones asociadas
 * Cuando se cree una lección que por defecto que se ponga la fecha de ese dia
 * Cron que busque los cursos y los ponga en finished si la fecha de fin ya ha pasado
