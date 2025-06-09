@@ -10,4 +10,13 @@
         <field name="code">model.finish_exams()</field>
     </record>
 
+    <record id="music_school_course_cron" model="ir.cron">
+        <field name="name">Finish courses</field>
+        <field name="model_id" ref="model_music_school_course"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="state">code</field>
+        <field name="code">model.finish_courses()</field>
+    </record>
+
 </odoo>

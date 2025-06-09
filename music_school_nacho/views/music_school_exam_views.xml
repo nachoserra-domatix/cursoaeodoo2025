@@ -52,6 +52,10 @@
                     <button string="Assign students" name="assign_students" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
+                <widget name="web_ribbon" title="Finished"
+                 bg_color="text-bg-info"
+                 invisible="state != 'finished'"/>
+                       
                 <div class="oe_title">
                     <h1>
                         <field name="name" placeholder="E.g Flute exam" class="oe_inline"/>
