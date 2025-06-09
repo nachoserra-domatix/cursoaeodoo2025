@@ -12,7 +12,7 @@ class MusicSchoolStudent(models.Model):
         string="Partner",
         help="Partner associated with this student"
     )
-    email = fields.Char(string="Email", related="partner_id.email", store=True, readonly=False)
+    email = fields.Char(string="Email")
     phone = fields.Char(string="Phone", related="partner_id.phone", store=True, readonly=False)
     birthdate = fields.Date(string="Birthdate")
     age = fields.Integer(string="Age", compute='_compute_age', store=True)
@@ -20,7 +20,8 @@ class MusicSchoolStudent(models.Model):
         comodel_name='res.users',
         string="Responsible",
         help="Responsible user for this student",
-        copy=False
+        copy=False,
+        default=lambda self: self.env.user
     )
     notes = fields.Html(
         string="Notes",
@@ -32,6 +33,13 @@ class MusicSchoolStudent(models.Model):
         string="Reference",
     )
     
+    @api.onchange('partner_id')
+    def _onchange_email(self):
+        if self.partner_id:
+            self.email = self.partner_id.email
+        else:
+            self.email = ''
+
     @api.depends('birthdate')
     def _compute_age(self):
         for record in self:

@@ -1,4 +1,5 @@
 from odoo import models, fields, Command, api
+from odoo.exceptions import UserError
 
 
 class MusicSchoolCourse(models.Model):
@@ -26,7 +27,7 @@ class MusicSchoolCourse(models.Model):
     instrument_id = fields.Many2one(
         comodel_name='music.school.instrument',
         string="Instrument",
-        help="Instrument associated with the course"
+        help="Instrument associated with the course",
     )
     level = fields.Selection(
         selection=[
@@ -40,7 +41,8 @@ class MusicSchoolCourse(models.Model):
     )
     start_date = fields.Date(
         string="Start Date",
-        help="Date when the course starts"
+        help="Date when the course starts",
+        default=fields.Date.context_today,
     )
     end_date = fields.Date(
         string="End Date",
@@ -69,6 +71,26 @@ class MusicSchoolCourse(models.Model):
         string="Students",
         help="Students enrolled in the course"
     )
+
+    exam_count = fields.Integer(
+        string="Exams Count",
+        compute='_compute_exam_count',
+        help="Number of exams associated with the course"
+    )
+    _sql_constraints = [
+        ('name_unique', 'UNIQUE(name)', 'The course name must be unique.'),]
+    
+
+    def _compute_exam_count(self):
+        for record in self:
+            record.exam_count = self.env['music.school.exam'].search_count([('course_id', '=', record.id)])
+            #record.exam_count = len(self.env['music.school.exam'].search([('course_id', '=', record.id)]))
+
+    @api.constrains('capacity')
+    def _check_capacity(self):
+        for record in self:
+            if record.capacity < 0:
+                raise UserError("Capacity cannot be negative.")
 
     @api.depends('start_date', 'end_date')
     def _compute_day_duration(self):
@@ -116,3 +138,12 @@ class MusicSchoolCourse(models.Model):
                 #record.write({
                 #     'student_ids': [Command.set(student.ids)]
                 # })
+    def action_view_exams(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Exams',
+            'res_model': 'music.school.exam',
+            'view_mode': 'kanban,pivot,list,form',
+            'domain': [('course_id', '=', self.id)],
+            'context': {'default_course_id': self.id},
+        }
