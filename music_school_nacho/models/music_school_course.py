@@ -83,6 +83,14 @@ class MusicSchoolCourse(models.Model):
         compute='_compute_lesson_count',
         help="Number of lessons associated with the course"
     )
+
+    company_id = fields.Many2one(
+        comodel_name='res.company',
+        string="Company",
+        default=lambda self: self.env.company,
+        help="Company associated with the course"
+    )
+
     _sql_constraints = [
         ('name_unique', 'UNIQUE(name)', 'The course name must be unique.'),]
     

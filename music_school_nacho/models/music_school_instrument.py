@@ -4,7 +4,9 @@ from odoo import models, fields
 class MusicSchoolInstrument(models.Model):
     _name = 'music.school.instrument'
     _description = 'Instruments'
+    _order = 'name desc'
 
+    active = fields.Boolean(string="Active", default=True)
     name = fields.Char(string="Name", required=True, translate=True)
     family_id = fields.Many2one(
         comodel_name='music.school.instrument.family',

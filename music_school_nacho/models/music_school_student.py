@@ -10,7 +10,8 @@ class MusicSchoolStudent(models.Model):
     partner_id = fields.Many2one(
         comodel_name='res.partner',
         string="Partner",
-        help="Partner associated with this student"
+        help="Partner associated with this student",
+        copy=False
     )
     email = fields.Char(string="Email")
     phone = fields.Char(string="Phone", related="partner_id.phone", store=True, readonly=False)
@@ -31,6 +32,7 @@ class MusicSchoolStudent(models.Model):
 
     reference = fields.Char(
         string="Reference",
+        copy=False
     )
     
     @api.onchange('partner_id')
