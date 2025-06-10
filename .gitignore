@@ -2,3 +2,8 @@ music_school_jaume_tor/__pycache__/__init__.cpython-312.pyc
 music_school_jaume_tor/models/__pycache__/__init__.cpython-312.pyc
 music_school_jaume_tor/models/__pycache__/music_school_instrument.cpython-312.pyc
 music_school_jaume_tor/models/__pycache__/music_school_student.cpython-312.pyc
+product_composition/__pycache__/__init__.cpython-312.pyc
+product_composition/__pycache__/__manifest__.cpython-312.pyc
+product_composition/models/__pycache__/__init__.cpython-312.pyc
+product_composition/models/__pycache__/product_composition_line.cpython-312.pyc
+product_composition/models/__pycache__/product_template.cpython-312.pyc
