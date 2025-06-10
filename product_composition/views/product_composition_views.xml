@@ -9,6 +9,7 @@
                     <field name="composition_line_ids" nolabel="1">
                         <tree editable="bottom">
                             <field name="percentage"/>
+
                             <field name="description_id"
                                    options="{'no_create': True, 'no_create_edit': True}"/>
                         </tree>
