@@ -14,4 +14,4 @@
 * Crear un asistente que permita crear lecciones desde el modelo de curso a partir de un calendario
 * Añadir campo company_id al modelo de curso, tanto en vista como en python
 * Hacer que por defecto coja la compañía de nuestro usuario
-* Hacer que el campo color sea dependiente de la compañía
+* Hacer que el campo description de curso sea dependiente de la compañía
