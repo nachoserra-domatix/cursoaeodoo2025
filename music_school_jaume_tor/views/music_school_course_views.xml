@@ -55,4 +55,29 @@
     </field>
 </record>
 
+
+<record id="model_name_view_search" model="ir.ui.view">
+    <field name="name">model_name.view.search</field>
+    <field name="model">model_name</field>
+    <field name="arch" type="xml">
+        <search string="">
+            
+        </search>
+    </field>
+</record>
+
+<record id="model_name_view_kanban" model="ir.ui.view">
+    <field name="name">model_name.view.kanban</field>
+    <field name="model">model_name</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <templates>
+                <t t-name="kanban-box">
+                    
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
 </odoo>
