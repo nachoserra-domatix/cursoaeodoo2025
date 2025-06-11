@@ -6,8 +6,13 @@ class MusicSchoolCourse(models.Model):
     _name = 'music.school.course'
     _description = 'Courses'
 
-    name = fields.Char(string="Name", required=True)
-    description = fields.Text(string="Description")
+    active = fields.Boolean(
+        string="Active",
+        default=True,
+        help="Indicates if the course is active"
+    )
+    name = fields.Char(string="Name", copy=False)
+    description = fields.Text(string="Description", company_dependent=True)
     state = fields.Selection(
         selection=[
             ('draft', 'Draft'),
