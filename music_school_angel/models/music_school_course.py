@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError
 
 class MusicSchoolCourse(models.Model):
    _name = "music.school.course"
@@ -30,7 +31,11 @@ class MusicSchoolCourse(models.Model):
          default='beginner'
       )
 
-   start_date = fields.Date(string="Start Date")
+   start_date = fields.Date(
+      string="Start Date",
+      help="Date when the course starts",
+      default=fields.Date.context_today,
+   )
    end_date = fields.Date(string="End Date")
    capacity = fields.Integer(string="Capacity")
 
@@ -51,6 +56,51 @@ class MusicSchoolCourse(models.Model):
         help="Duration of the course in days",
         store=True
    )
+
+   exam_count = fields.Integer(
+      string="Exams Count",
+      compute='_compute_exam_count',
+      help="Number of exams associated with the course"
+   )
+
+   lesson_count = fields.Integer(
+      string="Lessons Count",
+      compute='_compute_lesson_count',
+      help="Number of lessons associated with the course"
+   )
+
+   #Restricció en base de dades. Camp nom únic
+   _sql_constraints = [
+        ('name_unique', 'UNIQUE(name)', 'The course name must be unique.'),
+   ]
+
+   def _compute_lesson_count(self):
+      for record in self:
+         record.lesson_count = self.env['music.school.lesson'].search_count([('course_id', '=', record.id)])
+         
+   def _compute_exam_count(self):
+      for record in self:
+         record.exam_count = self.env['music.school.exam'].search_count([('course_id', '=', record.id)])
+         #record.exam_count = len(self.env['music.school.exam'].search([('course_id', '=', record.id)]))
+
+   #La data fi no pot ser anterior a l'inici
+   @api.constrains('start_date', 'end_date')
+   def _check_dates(self):
+      for record in self:
+         if record.start_date and record.end_date:
+               if record.start_date > record.end_date:
+                  raise UserError("Start date cannot be after end date.")
+         else:
+               raise UserError("Both start date and end date must be set.")
+
+
+   #S'executa cada vegada que es guarda el curs i s'ha modificat la capacitat
+   @api.constrains('capacity')
+   def _check_capacity(self):
+      for record in self:
+         if record.capacity < 0:
+            raise UserError("Capacity cannot be negative.")
+
 
    @api.depends('start_date', 'end_date')
    def _compute_day_duration(self):
@@ -99,3 +149,27 @@ class MusicSchoolCourse(models.Model):
                 #record.write({
                 #     'student_ids': [Command.set(student.ids)]
                 # })
+
+   def finish_courses(self):
+        courses = self.env['music.school.course'].search([('state', '!=', 'finished'), ('end_date', '<=', fields.Date.context_today(self))])
+        courses.action_finish()
+
+   def action_view_exams(self):
+      return {
+         'type': 'ir.actions.act_window',
+         'name': 'Exams',
+         'res_model': 'music.school.exam',
+         'view_mode': 'kanban,pivot,list,form',
+         'domain': [('course_id', '=', self.id)],
+         'context': {'default_course_id': self.id},
+      }
+    
+   def action_view_lessons(self):
+      return {
+         'type': 'ir.actions.act_window',
+         'name': 'Lessons',
+         'res_model': 'music.school.lesson',
+         'view_mode': 'list,form',
+         'domain': [('course_id', '=', self.id)],
+         'context': {'default_course_id': self.id},
+      }

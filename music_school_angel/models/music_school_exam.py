@@ -1,4 +1,6 @@
 from odoo import models, fields, Command, api
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class MusicSchoolExam(models.Model):
@@ -78,3 +80,12 @@ class MusicSchoolExam(models.Model):
         #         'student_id': student.id,
         #     })
        
+    def finish_exams(self):
+        _logger.info("Buscando examenes en estado borrador o programado")
+        exams = self.env['music.school.exam'].search([('state', 'in', ['draft','scheduled'])])
+        for exam in exams:
+            if exam.date and exam.date < fields.Datetime.now():
+                exam.state = 'finished'
+                _logger.info(f"Examen {exam.name} marcado como finalizado")
+        _logger.info("Examenes finalizados correctamente")
+   
