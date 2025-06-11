@@ -5,7 +5,7 @@ class MusicSchoolLesson(models.Model):
     _description = "Music School Lesson"
     # _rec_name = "name"
 
-    name = fields.Char(string="Name", required=True)
+    name = fields.Char(string="Name")
     notes = fields.Html(string="Description", help="Details about the lesson")
     date = fields.Datetime(string="Date", 
             help="Date when the lesson is scheduled",
@@ -43,7 +43,7 @@ class MusicSchoolLesson(models.Model):
         string="Duration (hours)",
         help="Duration of the lesson in hours"
     )
-    attendace_ids = fields.One2many(
+    attendance_ids = fields.One2many(
         comodel_name="music.school.lesson.attendance",
         inverse_name="lesson_id",
         string="Attendance Records",

@@ -5,6 +5,11 @@ class MusicSchoolInstrument(models.Model):
     _description = 'Music School Instrument'
 
     name = fields.Char(string='Name', required=True)
+    active = fields.Boolean(
+        string='Active',
+        default=True,
+        help="Indicates if the instrument is currently active"
+    )
     family_id = fields.Many2one(
         comodel_name='music.school.instrument.family',
         string="Family",

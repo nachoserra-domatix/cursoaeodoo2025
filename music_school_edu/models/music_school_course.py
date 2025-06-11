@@ -5,8 +5,13 @@ class MusicSchoolCourse(models.Model):
     _name = "music.school.course"
     _description = "Music school course"
 
-    name = fields.Char(string="Name" ,required=True)
-    description = fields.Text(string="Desciption course")
+    active= fields.Boolean(
+        string="Active",
+        default=True,
+        help="Indicates if the course is currently active"
+    )
+    name = fields.Char(string="Name" ,copy=False)
+    description = fields.Text(string="Desciption course",company_dependent=True, help="Description of the course")
     state = fields.Selection(
         selection =[
             ('draft','Draft'),
@@ -79,8 +84,13 @@ class MusicSchoolCourse(models.Model):
     lesson_count = fields.Integer(
         string="Lesson Count",
         compute="_compute_lesson_count",
-        store=True,
         help="Number of lessons in the course"
+    )
+    company_id = fields.Many2one(
+        comodel_name='res.company',
+        string='Company',
+        default=lambda self: self.env.company,
+        help="Company associated with the course"
     )
     _sql_constraints = [
         ('name_unique', 'UNIQUE(name)', 'The course name must be unique.'),
@@ -93,7 +103,7 @@ class MusicSchoolCourse(models.Model):
                 raise UserError("Capacity cannot be negative.")
     def _compute_lesson_count(self):
         for record in self:
-            record.lesson_count = self.env['music.school.lesson'].search_count([('course_id','=', record.id)])
+            record.lesson_count = self.env['music.school.lesson'].search_count([('course_id', '=', record.id)])
             
 
     @api.depends('start_date', 'end_date')
@@ -122,10 +132,9 @@ class MusicSchoolCourse(models.Model):
     def group_expand_state(self, states, domain):
         return [key for key, val in type(self).state.selection]
     def create_lesson(self):
-        vals= {
-            'name':self.name + " Lesson",
+        vals = {
             'course_id': self.id,
-            'teacher_id': self.teacher_id.id,        
+            'teacher_id': self.teacher_id.id,
         }
         lesson = self.env['music.school.lesson'].create(vals)
 

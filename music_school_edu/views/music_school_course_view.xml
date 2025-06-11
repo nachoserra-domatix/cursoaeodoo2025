@@ -39,7 +39,7 @@
                 <button string="Change to in progress" invisible="state in('in progress')" name="update_state_in_progress" type="object" class="oe_highlight"/>
                 <button string="Change to complete" invisible="state in('completed')" name="update_state_complete" type="object" class="oe_highlight"/>
                 <button string="Create lesson" name="create_lesson" type="object" class="oe_highlight"/>
-                <button string="Import Students" name="assign_student" type="object" class="oe_highlight"/>
+                <button string="Import Students" name="assign_student" groups="music_school_edu.group_music_school_manager" type="object" class="oe_highlight"/>
             </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -57,6 +57,7 @@
                         <field name="teacher_id" domain="[('level','=',level)]"/>
                         <field name="level"/>
                         <field name="capacity"/>
+                        <field name="company_id"/>
                     </group>
                     <group>
                         <field name="instrument_id"/>

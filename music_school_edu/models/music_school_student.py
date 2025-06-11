@@ -13,7 +13,8 @@ class MusicSchoolStudent(models.Model):
     partner_id = fields.Many2one(
         comodel_name="res.partner",
         string="Partner",
-        help="Partner associated with this student"
+        help="Partner associated with this student",
+        copy=False
     )
     notes = fields.Html(
         string="Notes",
@@ -26,7 +27,7 @@ class MusicSchoolStudent(models.Model):
         copy=False,
         default=lambda self: self.env.user
     )
-    reference= fields.Char(string="Reference")
+    reference= fields.Char(string="Reference" ,copy = False)
     course_ids = fields.Many2many(
         comodel_name="music.school.course",
         string="Courses",

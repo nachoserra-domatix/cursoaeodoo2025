@@ -31,7 +31,7 @@
             <form string="Exam">
                 <header>
                     <field name="exam_state" widget="statusbar"/>
-                    <button string="Assign students" name="assign_students" type="object" class="oe_highlight"/>
+                    <button string="Assign students"  groups="music_school_edu.group_music_school_manager" name="assign_students" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                 <div class="oe_title">

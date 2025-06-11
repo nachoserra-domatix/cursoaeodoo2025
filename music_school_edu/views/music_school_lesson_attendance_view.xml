@@ -27,6 +27,7 @@
         <field name="model">music.school.lesson.attendance</field>
         <field name="arch" type="xml">
             <list string="Simple Lesson Attendance" editable="bottom">
+                <field name="sequence" widget="handle"/>
                 <field name="student_id"/>
                 <field name="present" widget="boolean_toggle"/>
                 <field name="date"/>

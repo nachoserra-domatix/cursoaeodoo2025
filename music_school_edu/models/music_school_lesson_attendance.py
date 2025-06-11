@@ -5,6 +5,11 @@ class MusicSchoolLessonAttendance(models.Model):
     _description = "Attendance for Music School Lesson "
     _rec_name = "student_id"
 
+
+    sequence = fields.Integer(
+        string="Sequence",
+        help="Order of the attendance record"
+    )
     lesson_id = fields.Many2one(
         comodel_name="music.school.lesson",
         string="Lesson",

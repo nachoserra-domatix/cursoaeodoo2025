@@ -53,7 +53,7 @@
                     
                     <notebook>
                         <page name="attendances" string="Attendances">
-                            <field name="attendace_ids" context="{'default_present':True,'default_date': date,'list_view_ref': 'music_school_edu.music_school_lesson_attendance_simple_view_list'}"/>
+                            <field name="attendance_ids" context="{'default_present':True,'default_date': date,'list_view_ref': 'music_school_edu.music_school_lesson_attendance_simple_view_list'}"/>
                         </page>
                         <page name="Notes" string="Notes">
                             <field name="notes"/>
