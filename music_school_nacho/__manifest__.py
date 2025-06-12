@@ -25,6 +25,9 @@
         'views/music_school_menuitems.xml',
         'wizard/music_school_course_change_state.xml',
         'wizard/music_school_lesson_batch.xml',
-        'report/music_school_course_report.xml'
+        'report/music_school_course_report.xml',
+        'report/music_school_course_simple_report.xml',
+        'report/music_school_lesson_report.xml',
+        'report/music_school_exam_report.xml',
     ]
 }

@@ -6,6 +6,12 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
+                    <t t-if="o.env.context.get('button1')">
+                        <h1>Desde el botón 1</h1>
+                    </t>
+                    <t t-if="o.env.context.get('button2')">
+                        <h1>Desde el botón 2</h1>
+                    </t>
                         <h2 t-field="o.name"/>  
                         <div class="row">
                             <div class="col-auto col-4 mw-100 mb-2">
@@ -50,17 +56,15 @@
     <record id="paperformat_music_school" model="report.paperformat">
         <field name="name">Music School Paperformat</field>
         <field name="default" eval="True"/>
-        <field name="format">custom</field>
-        <field name="page_height">80</field>
-        <field name="page_width">175</field>
+        <field name="format">A4</field>
         <field name="orientation">Portrait</field>
-        <field name="margin_top">3</field>
-        <field name="margin_bottom">3</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">15</field>
         <field name="margin_left">3</field>
         <field name="margin_right">3</field>
         <field name="header_line" eval="False"/>
-        <field name="header_spacing">3</field>
-        <field name="dpi">80</field>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
     </record>
 
     <record id="action_report_music_school_course" model="ir.actions.report">

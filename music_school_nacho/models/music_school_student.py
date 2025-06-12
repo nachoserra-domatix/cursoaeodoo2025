@@ -34,6 +34,12 @@ class MusicSchoolStudent(models.Model):
         string="Reference",
         copy=False
     )
+
+    attendances_count = fields.Integer(
+        string="Attendances Count",
+        compute='_compute_attendances_count',
+        help="Number of attendance records for this student"
+    )
     
     @api.onchange('partner_id')
     def _onchange_email(self):
@@ -55,3 +61,15 @@ class MusicSchoolStudent(models.Model):
     def generate_reference(self):
         for record in self:
             record.reference = f"ESC-{record.id}{record.name}"
+    
+
+    def action_view_attendances(self):
+        self.ensure_one()
+        action = self.env.ref("music_school_nacho.music_school_lesson_attendance_action").read()[0]
+        action['domain'] = [('student_id', '=', self.id)]
+        action['context'] = {'default_student_id': self.id}
+        return action
+
+    def _compute_attendances_count(self):
+        for record in self:
+            record.attendances_count = self.env['music.school.lesson.attendance'].search_count([('student_id', '=', record.id)])
