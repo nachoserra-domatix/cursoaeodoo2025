@@ -4,9 +4,19 @@ from odoo import models, fields, api
     musica, tenemos informacion de sus datos personales con
     campos de tipo char, int y fecha
 
-    Tambien se maneja un estado booleano activo
-    por defecto = true 
+    Los campos incluyen:
+    - active: Estado booleano que indica si el estudiante está activo (por defecto, True).
+    - name: Nombre del estudiante (requerido).
+    - partner_id: Relación con el modelo 'res.partner' para gestionar información adicional.
+    - email: Correo electrónico del estudiante.
+    - phone: Teléfono del estudiante, relacionado con el partner asociado.
+    - birthdate: Fecha de nacimiento del estudiante.
+    - age: Edad del estudiante, calculada a partir de la fecha de nacimiento.
+    - user_id: Usuario responsable del estudiante, con un valor predeterminado del usuario actual.
+    - notes: Notas adicionales sobre el estudiante.
+    - reference: Referencia única para el estudiante.
 '''
+
 class MusicSchoolStudent(models.Model):
     _name = 'music.school.student'
     _description = 'Students'

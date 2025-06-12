@@ -1,5 +1,11 @@
 from odoo import models, fields, api
 
+'''
+Este wizard se usa para cambiar el estado de los cursos de la escuela de música.
+Permite a los usuarios seleccionar un nuevo estado (Draft, In progress, Finalizado) 
+para uno o varios cursos.
+'''
+
 class MusicSchoolCourseChangeState(models.TransientModel):
     _name = 'music.school.course.change.state.wizard'
     _description = 'Wizard to change the state of a music school course'

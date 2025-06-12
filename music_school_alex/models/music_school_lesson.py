@@ -1,5 +1,18 @@
 from odoo import models, fields
 
+"""
+    Este modelo gestiona las lecciones impartidas en la escuela de música.
+    Cada lección está asociada a un curso específico y a un profesor responsable. Los campos incluyen:
+    - teacher_id: El profesor encargado de la lección.
+    - course_id: El curso al que está asociada la lección.
+    - room_id: La sala donde se lleva a cabo la lección.
+    - date: La fecha y hora en que se realiza la lección.
+    - duration: La duración de la lección en horas.
+    - notes: Notas adicionales sobre la lección.
+    - color: Color asociado a la lección para las vistas de calendario.
+    - state: Estado actual de la lección (borrador, finalizada, pospuesta, cancelada).
+    - attendance_ids: Registros de asistencia relacionados con la lección.
+"""
 
 class MusicSchoolLesson(models.Model):
     _name = 'music.school.lesson'

@@ -1,5 +1,13 @@
 from odoo import models, fields, Command, api
 
+"""
+    Este modelo representa los resultados de los exámenes en la escuela de música.
+    
+    -Almacena la información relacionada con los exámenes realizados por los estudiantes,
+    incluyendo la puntuación obtenida, si el estudiante aprobó el examen, y notas adicionales. 
+    -También establece relaciones con los modelos de exámenes y estudiantes.
+"""
+
 class MusicSchoolExamResult(models.Model):
     _name = 'music.school.exam.result'
     _description = 'Exam Results'

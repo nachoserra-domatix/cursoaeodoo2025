@@ -2,6 +2,15 @@ from odoo import models, fields, Command, api
 import logging
 _logger = logging.getLogger(__name__)
 
+"""
+    Este modelo representa los exámenes de la escuela de música.
+    -Almacena la información relacionada con los exámenes, incluyendo el nombre del examen,
+    el curso y el instrumento asociados, la fecha y hora del examen, así como las puntuaciones mínima
+    y máxima. 
+    -Gestiona el estado del examen (borrador, programado o finalizado) 
+    -Establece relaciones con los estudiantes y profesores involucrados. Además, permite registrar los resultados 
+    de cada estudiante para cada examen.
+"""
 class MusicSchoolExam(models.Model):
     _name = 'music.school.exam'
     _description = 'Exams'

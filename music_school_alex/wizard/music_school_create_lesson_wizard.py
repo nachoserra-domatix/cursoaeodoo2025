@@ -1,6 +1,19 @@
 from odoo import models, fields, api
 from datetime import timedelta
 
+'''
+Permite a los usuarios seleccionar un curso y especificar un rango de fechas para crear lecciones diarias.
+Clases:
+- MusicSchoolCreateLesson: Asistente para crear lecciones a partir de un curso y un rango de fechas.
+Campos:
+- course_id: Relación con el curso para el cual se están creando las lecciones.
+- start_date: Fecha y hora de inicio de las lecciones.
+- end_date: Fecha y hora de finalización de las lecciones.
+Métodos:
+- action_create_lessons: Crea lecciones diarias desde la fecha de inicio hasta la fecha de finalización,
+  asignando cada lección al curso seleccionado.
+'''
+
 class MusicSchoolCreateLesson(models.TransientModel):
     _name = 'music.school.create.lesson'
     _description = 'This wizard allows you to create injuries from the calendar'
