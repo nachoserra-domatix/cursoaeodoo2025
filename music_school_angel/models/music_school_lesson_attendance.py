@@ -7,6 +7,11 @@ class MusicSchoolLessonAttendance(models.Model):
     _description = 'Attendance for Music School Lessons'
     _rec_name = 'student_id'
 
+    #En versions anteriors de odoo.
+    #_order = 'sequence' o _order = 'name asc'
+
+    sequence = fields.Integer('Sequence', default=10, help="Sequence for ordering attendance records")
+
     lesson_id = fields.Many2one(
         comodel_name='music.school.lesson',
         string="Lesson",

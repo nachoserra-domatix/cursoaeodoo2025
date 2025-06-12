@@ -5,8 +5,14 @@ class MusicSchoolCourse(models.Model):
    _name = "music.school.course"
    _description = "Courses"
 
-   name = fields.Char(string="Name", required=True)
-   description = fields.Text(string="Description")
+   active = fields.Boolean(
+        string="Active",
+        default=True,
+        help="Indicates if the course is active"
+   )
+
+   name = fields.Char(string="Name", copy=False)
+   description = fields.Text(string="Description", company_dependent=True)
    state = fields.Selection([('draft', 'Draft'), ('progress', 'In progress'), ('finished', 'Finished')], string="State", default='draft', group_expand='group_expand_state')
 
    professor_id = fields.Many2one(
@@ -68,6 +74,15 @@ class MusicSchoolCourse(models.Model):
       compute='_compute_lesson_count',
       help="Number of lessons associated with the course"
    )
+
+   #Multicompany. Cada companyia tindrà els seus cursos
+   company_id = fields.Many2one(
+        comodel_name='res.company',
+        string="Company",
+        default=lambda self: self.env.company,
+        help="Company associated with the course"
+   )
+
 
    #Restricció en base de dades. Camp nom únic
    _sql_constraints = [

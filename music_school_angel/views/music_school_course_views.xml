@@ -66,7 +66,8 @@
                         <field name="instrument_id"/>
                         <field name="level"/>
                     </group>
-                    <group>    
+                    <group>
+                        <field name="company_id"/>    
                         <field name="start_date"/>
                         <field name="end_date"/>
                         <field name="day_duration"/>

@@ -50,7 +50,7 @@
             <form string="Exam">
                 <header>
                     <field name="state" widget="statusbar"/>
-                    <button string="Assign students" name="assign_students" type="object" class="oe_highlight"/>
+                    <button string="Assign students" name="assign_students" groups="music_school_angel.group_music_school_manager" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                 
