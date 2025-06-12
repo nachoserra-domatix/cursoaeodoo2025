@@ -7,27 +7,27 @@
                         <h2 t-field="lesson.name"/>  
                         <div class="row">
                             <div class="col-auto col-4 mw-100 mb-2">
-                                <strong>Curso:</strong>
+                                <strong>Course:</strong>
                                 <span t-field="lesson.course_id.name"/>
                             </div>
                             <div class="col-auto col-4 mw-100 mb-2">
-                                <strong>Profesor:</strong>
+                                <strong>Teacher:</strong>
                                 <span t-field="lesson.teacher_id.name"/>
                             </div>
                             <div class="col-auto col-4 mw-100 mb-2">
-                                <strong>Aula:</strong>
+                                <strong>Classroom:</strong>
                                 <span t-field="lesson.classroom_id.name"/>
                             </div>
                             <div class="col-auto col-4 mw-100 mb-2">
-                                <strong>Fecha:</strong>
+                                <strong>Date:</strong>
                                 <span t-field="lesson.date"/>
                             </div>
                         </div>
                         <table class="table table-sm o_main_table table-borderless mt-4">
                             <thead>
                                 <tr>
-                                    <th class="text-start">Estudiante</th>
-                                    <th class="text-start">Presente</th>
+                                    <th class="text-start">Student</th>
+                                    <th class="text-start">Is present</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,7 +35,7 @@
                                     <tr>
                                         <td><span t-field="attendance.student_id.name"/></td>
                                         <td>
-                                            <span t-if="attendance.present">Sí</span>
+                                            <span t-if="attendance.present">Yes</span>
                                             <span t-if="not attendance.present">No</span>
                                         </td>
                                     </tr>
@@ -48,7 +48,7 @@
         </t>
     </template>
 
-    <record id="paperformat_music_school_lesson" model="report.paperformat">
+    <!-- <record id="paperformat_music_school_lesson" model="report.paperformat">
         <field name="name">Music School Lesson Paperformat</field>
         <field name="default" eval="True"/>
         <field name="format">custom</field>
@@ -62,7 +62,7 @@
         <field name="header_line" eval="False"/>
         <field name="header_spacing">3</field>
         <field name="dpi">80</field>
-    </record>
+    </record> -->
     
     <record id="action_report_music_school_lesson" model="ir.actions.report">
         <field name="name">Lesson</field>
@@ -71,7 +71,7 @@
         <field name="report_name">music_school_edu.report_music_school_lesson</field>
         <field name="report_file">music_school_edu.report_music_school_lesson</field>
         <field name="print_report_name">(object.name or 'Lesson') + '.pdf'</field>
-        <field name="paperformat_id" ref="paperformat_music_school_lesson"/>
+        <!-- <field name="paperformat_id" ref="paperformat_music_school_lesson"/> -->
         <field name="binding_model_id" ref="model_music_school_lesson"/>
         <field name="binding_type">report</field>
     </record>

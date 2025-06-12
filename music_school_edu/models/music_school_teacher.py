@@ -30,3 +30,21 @@ class MusicSchoolTeacher(models.Model):
         string="Level",
         default='beginner',
     )
+    course_count = fields.Integer(
+        string="Course Count",
+        compute="_compute_course_count",
+        help="Number of courses taught by the teacher"
+    )
+    def _compute_course_count(self):
+        for record in self:
+            record.course_count = self.env['music.school.course'].search_count([('teacher_id','=', record.id)])
+    
+    def action_view_courses(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Courses',
+            'res_model': 'music.school.course',
+            'view_mode': 'list,form',
+            'domain': [('teacher_id', '=', self.id)],
+            'context': {'default_teacher_id': self.id},
+        }

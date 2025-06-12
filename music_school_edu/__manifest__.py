@@ -29,6 +29,7 @@
         'report/music_school_course_report.xml',
         'report/music_school_course_report_simple.xml',
         'report/music_school_lesson_report.xml',
+        'report/music_school_exam_report.xml',
     ],
     'auto_install': False,
     'application': False,

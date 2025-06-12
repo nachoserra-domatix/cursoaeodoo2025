@@ -33,7 +33,29 @@ class MusicSchoolStudent(models.Model):
         string="Courses",
         help="Courses that the student is enrolled in"
     )
-
+    attendance_ids = fields.One2many(
+        comodel_name="music.school.lesson.attendance",
+        inverse_name="student_id",
+        string="Attendances",
+        help="Attendance records for the student"
+    )
+    attendance_count = fields.Integer(
+        string="Attendance Count",
+        compute="_compute_attendance_count",
+        help="Number of attendance records for the student"
+    )
+    def _compute_attendance_count(self):
+        for record in self:
+            record.attendance_count = self.env['music.school.lesson.attendance'].search_count([('student_id', '=', record.id)])
+    def action_view_attendance(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Attendances',
+            'res_model': 'music.school.lesson.attendance',
+            'view_mode': 'list,form',
+            'domain': [('student_id', '=', self.id)],
+            'context': {'default_student_id': self.id,'default_date': fields.Date.today()},
+        }
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         if self.partner_id:
