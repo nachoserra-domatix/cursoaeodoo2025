@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_school_exam_resul_action" model="ir.actions.act_window">
+        <field name="name">Exams</field>
+        <field name="res_model">music.school.exam.result</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Manage the exams for students in their music courses.
+            </p>
+        </field>
+    </record>
+    <record id="music_school_exam_result_view_list" model="ir.ui.view">
+        <field name="name">music.school.exam.result.view.list</field>
+        <field name="model">music.school.exam.result</field>
+        <field name="arch" type="xml">
+            <list string="Exam Results">
+                <field name="student_id" domain="[('id', 'in', elegible_student_ids)]"/>
+                <field name="exam_id"/>
+                <field name="note"/>
+                
+            </list>
+        </field>
+    </record>
+    <record id="music_school_exam_result_view_form" model="ir.ui.view">
+        <field name="name">music.school.exam.result.view.form</field>
+        <field name="model">music.school.exam.result</field>
+        <field name="arch" type="xml">
+            <form string="Exam Result">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_id" domain="[('id', 'in', elegible_student_ids)]"/>
+                            <field name="exam_id"/>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                            <field name="passed" readonly="1" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Comments">
+                            <field name="comments"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

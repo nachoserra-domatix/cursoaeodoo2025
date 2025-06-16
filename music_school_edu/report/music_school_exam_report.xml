@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="report_music_school_exam">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Exam Results</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Note</th>
+                                <th>Passed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs.result_ids" t-as="result">
+                                <td><span t-field="result.student_id.name"/></td>
+                                <td><span t-field="result.note"/></td>
+                                <td>
+                                    <span t-if="result.passed">Yes</span>
+                                    <span t-else="">No</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_music_school_exam" model="ir.actions.report">
+        <field name="name">Exam Results</field>
+        <field name="model">music.school.exam</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">music_school_edu.report_music_school_exam</field>
+        <field name="report_file">music_school_edu.report_music_school_exam</field>
+        <field name="print_report_name">'Exam_Results_%s.pdf' % object.name</field>
+        <field name="binding_model_id" ref="model_music_school_exam"/>
+        <field name="binding_type">report</field>
+    </record>
+    
+</odoo>
