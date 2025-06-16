@@ -16,7 +16,8 @@ class MusicSchoolCourse(models.Model):
         selection =[
             ('draft','Draft'),
             ('in progress','In Progress'),
-            ('completed','Completed')
+            ('completed','Completed'),
+            ['cancelled','Cancelled'],
         ],
         string="State"
         ,default='draft',
