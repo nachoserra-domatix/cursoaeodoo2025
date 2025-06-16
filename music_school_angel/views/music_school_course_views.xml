@@ -43,6 +43,8 @@
                 <button string="Action Finish" invisible="state in ('finished')" name="action_finish" type="object" class="btn-primary"/>
                 <button string="Create Lesson" name="create_lesson" type="object" class="btn-primary"/>
                 <button string="Assign students" groups="music_school_angel.group_music_school_manager" name="assign_students" type="object" class="btn-secondary"/>
+                <button string="Print report" name="action_print_report" context="{'button1': True}" type="object" class="oe_highlight"/>
+                <button string="Print report 2" name="action_print_report" context="{'button2': True}" type="object" class="oe_highlight"/>                
                 <field name="state" options="{'clickable':1}" widget="statusbar"/>
             </header>
             <sheet>

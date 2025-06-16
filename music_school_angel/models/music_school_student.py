@@ -30,6 +30,11 @@ class MusicSchoolStudent(models.Model):
 
    reference = fields.Char(string="Reference")
 
+   attendances_count = fields.Integer(
+        string="Attendances Count",
+        compute='_compute_attendances_count',
+        help="Number of attendance records for this student"
+   )
 
 
    @api.onchange('partner_id')
@@ -53,3 +58,15 @@ class MusicSchoolStudent(models.Model):
                record.age = age
          else:
                record.age = 0
+
+   def action_view_attendances(self):
+      self.ensure_one()
+      action = self.env.ref("music_school_angel.music_school_lesson_attendance_action").read()[0]
+      action['domain'] = [('student_id', '=', self.id)]
+      action['context'] = {'default_student_id': self.id}
+      return action
+
+
+   def _compute_attendances_count(self):
+      for record in self:
+         record.attendances_count = self.env['music.school.lesson.attendance'].search_count([('student_id', '=', record.id)])

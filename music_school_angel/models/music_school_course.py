@@ -188,3 +188,6 @@ class MusicSchoolCourse(models.Model):
          'domain': [('course_id', '=', self.id)],
          'context': {'default_course_id': self.id},
       }
+
+   def action_print_report(self):       
+      return self.env.ref('music_school_angel.action_report_music_school_course').report_action(self.ids)
