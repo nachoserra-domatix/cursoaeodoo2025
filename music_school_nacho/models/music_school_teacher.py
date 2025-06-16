@@ -4,10 +4,19 @@ from odoo import models, fields
 class MusicSchoolTeacher(models.Model):
     _name = 'music.school.teacher'
     _description = 'Teachers'
+    _inherits = {'res.partner': 'partner_id'}
 
-    name = fields.Char(string="Name", required=True)
-    email = fields.Char(string="Email")
-    phone = fields.Char(string="Phone")
+
+    #name = fields.Char(string="Name", required=True)
+    #email = fields.Char(string="Email")
+    #phone = fields.Char(string="Phone")
+    partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string="Partner",
+        help="Partner associated with this teacher",
+        copy=False,
+        ondelete='cascade',
+    )
     level = fields.Selection(
         selection=[
             ('beginner', 'Beginner'),

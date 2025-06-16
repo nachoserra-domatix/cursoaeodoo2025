@@ -63,3 +63,19 @@ class MusicSchoolCourse(models.Model):
             'view_mode': 'list,form',
             'domain': [('id', 'in', self.order_ids.ids)],
         }
+    
+    def action_cancel(self):
+        res = super().action_cancel()
+        self.order_ids.action_cancel()
+        return res
+
+    def action_draft(self):
+        res = super().action_draft()
+        self.order_ids.action_draft()
+        return res
+
+    def action_finish(self):
+        res = super().action_finish()
+        self.order_ids.filtered(lambda o: o.state != 'done').action_confirm()
+        self.order_ids.filtered(lambda o: o.invoice_status != 'invoiced')._create_invoices()
+        return res

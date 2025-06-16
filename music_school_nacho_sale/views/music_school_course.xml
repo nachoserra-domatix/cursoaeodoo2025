@@ -13,7 +13,7 @@
                 </button>
             </div>
             <button name="assign_students" position="after">
-                <button string="Create orders" name="action_create_orders" type="object" class="btn-danger"/>
+                <button string="Create orders" name="action_create_orders" type="object" class="btn-warning"/>
             </button>
             <field name="company_id" position="after">
                 <field name="product_id"/>

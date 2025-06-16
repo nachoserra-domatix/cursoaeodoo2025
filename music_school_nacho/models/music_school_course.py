@@ -18,6 +18,7 @@ class MusicSchoolCourse(models.Model):
             ('draft', 'Draft'),
             ('progress', 'In progress'),
             ('finished', 'Finished'),
+            ('cancelled', 'Cancelled'),
         ],
         string="State",
         default='draft',
@@ -148,6 +149,10 @@ class MusicSchoolCourse(models.Model):
             lessons = self.env['music.school.lesson'].search([('course_id','=', record.id)])
             #lessons.state = 'done'
             lessons.write({'state': 'done'})
+    
+    def action_cancel(self):
+        for record in self:
+            record.state = 'cancelled'
     
     def group_expand_state(self, states, domain):
         return [key for key, val in type(self).state.selection]

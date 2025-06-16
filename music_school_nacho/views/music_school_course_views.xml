@@ -41,6 +41,7 @@
                     <button string="Action Draft" invisible="state in ('draft')" name="action_draft" type="object" class="btn-secondary"/>
                     <button string="Action in Progress" invisible="state in ('progress')" name="action_progress" type="object" class="btn-success"/>
                     <button string="Action finish" invisible="state in ('finished')" name="action_finish" type="object" class="btn-primary"/>
+                    <button string="Action cancel" invisible="state in ('cancelled')" name="action_cancel" type="object" class="btn-danger"/>
                     <button string="Create Lesson" groups="music_school_nacho.group_music_school_manager" name="create_lesson" type="object" class="btn-primary"/>
                     <button string="Assign students" groups="music_school_nacho.group_music_school_manager" name="assign_students" type="object" class="btn-secondary"/>
                     <button string="Print report" name="action_print_report" context="{'button1': True}" type="object" class="oe_highlight"/>
