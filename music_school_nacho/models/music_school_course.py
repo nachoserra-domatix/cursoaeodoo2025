@@ -11,7 +11,7 @@ class MusicSchoolCourse(models.Model):
         default=True,
         help="Indicates if the course is active"
     )
-    name = fields.Char(string="Name", copy=False)
+    name = fields.Char(string="Name", copy=False, default="New Course")
     description = fields.Text(string="Description", company_dependent=True)
     state = fields.Selection(
         selection=[
@@ -199,3 +199,8 @@ class MusicSchoolCourse(models.Model):
     def action_print_report(self):
         
         return self.env.ref('music_school_nacho.action_report_music_school_course').report_action(self.ids)
+
+    def create(self, vals):
+        vals['name'] = self.env['ir.sequence'].next_by_code('music.school.course')
+        res = super().create(vals)
+        return res

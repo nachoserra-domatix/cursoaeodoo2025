@@ -12,6 +12,7 @@
     'data':[
         'data/ir_cron.xml',
         'data/music_school_data.xml',
+        'data/ir_sequence.xml',
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/music_school_student_views.xml',
