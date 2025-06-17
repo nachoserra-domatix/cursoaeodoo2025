@@ -38,6 +38,7 @@
                 <button string="Change to draft" invisible="state in('draft')" name="update_state_draft" type="object" class="oe_highlight"/>
                 <button string="Change to in progress" invisible="state in('in progress')" name="update_state_in_progress" type="object" class="oe_highlight"/>
                 <button string="Change to complete" invisible="state in('completed')" name="update_state_complete" type="object" class="oe_highlight"/>
+                <button string="Action cancel" invisible="state in ('cancelled')" name="action_cancel" type="object" class="btn-danger"/>
                 <button string="Create lesson" name="create_lesson" type="object" class="oe_highlight"/>
                 <button string="Import Students" name="assign_student" groups="music_school_edu.group_music_school_manager" type="object" class="oe_highlight"/>
             </header>
@@ -75,6 +76,7 @@
                         </page>
                     </notebook>                  
                 </sheet>
+                <chatter/>
             </form>
         </field>
     </record>

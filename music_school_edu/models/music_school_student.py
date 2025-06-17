@@ -3,10 +3,11 @@ from odoo import models , fields, api
 class MusicSchoolStudent(models.Model):
     _name = "music.school.student"
     _description = "music school student"
+    _inherits = {'res.partner': 'partner_id'}
 
-    name = fields.Char(string="Name" ,required=True)
-    email = fields.Char(string="Email")
-    phone = fields.Char(string="Phone number",related ="partner_id.phone", store=True, readonly=False)
+    # name = fields.Char(string="Name" ,required=True)
+    # email = fields.Char(string="Email")
+    # phone = fields.Char(string="Phone number",related ="partner_id.phone", store=True, readonly=False)
     birthdate = fields.Date(string="Birthdate")
     age = fields.Integer(string="Age", compute="_compute_age", store=True)
     active = fields.Boolean(string="Active", default=True)
@@ -14,7 +15,8 @@ class MusicSchoolStudent(models.Model):
         comodel_name="res.partner",
         string="Partner",
         help="Partner associated with this student",
-        copy=False
+        copy=False,
+        ondelete='cascade',
     )
     notes = fields.Html(
         string="Notes",

@@ -4,6 +4,7 @@ from odoo.exceptions import UserError
 class MusicSchoolCourse(models.Model):
     _name = "music.school.course"
     _description = "Music school course"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active= fields.Boolean(
         string="Active",
@@ -123,6 +124,10 @@ class MusicSchoolCourse(models.Model):
             record.state = 'completed'
         for lesson in lessons:
             lesson.state = 'completed'
+    
+    def action_cancel(self):
+        for record in self:
+            record.state ='cancelled'
             
     def update_state_in_progress(self):
         for record in self:

@@ -3,10 +3,19 @@ from odoo import models, fields
 class MusicSchoolTeacher(models.Model):
     _name = "music.school.teacher"
     _description = "Music School Teacher"
+    _inherits = {'res.partner':'partner_id'}
 
-    name = fields.Char(string="Name", required=True)
-    email = fields.Char(String="Email")
-    phone = fields.Char(String="Phone")
+    # name = fields.Char(string="Name", required=True)
+    # email = fields.Char(String="Email")
+    # phone = fields.Char(String="Phone")
+
+    partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string="Partner",
+        help="Partner associated with this teacher",
+        copy=False,
+        ondelete='cascade',
+    )
     reference = fields.Char(String="Reference")
     course_id = fields.One2many(
         comodel_name="music.school.course",

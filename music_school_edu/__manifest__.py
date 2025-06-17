@@ -7,7 +7,7 @@
     'author': 'Edu',
     'installable': True,
     'depends': [
-        'base'
+        'base','mail',
     ],
     'data': [
         'data/ir_cron.xml',

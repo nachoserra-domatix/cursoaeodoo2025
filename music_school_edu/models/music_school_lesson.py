@@ -4,6 +4,7 @@ class MusicSchoolLesson(models.Model):
     _name = "music.school.lesson"
     _description = "Music School Lesson"
     # _rec_name = "name"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Name")
     notes = fields.Html(string="Description", help="Details about the lesson")
