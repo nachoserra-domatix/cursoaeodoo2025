@@ -5,6 +5,7 @@ class MusicSchoolLesson(models.Model):
     _name = 'music.school.lesson'
     _description = 'Lessons'
     _rec_name = 'course_id'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
     teacher_id = fields.Many2one(

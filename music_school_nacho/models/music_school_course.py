@@ -5,6 +5,7 @@ from odoo.exceptions import UserError
 class MusicSchoolCourse(models.Model):
     _name = 'music.school.course'
     _description = 'Courses'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active = fields.Boolean(
         string="Active",
@@ -57,7 +58,8 @@ class MusicSchoolCourse(models.Model):
 
     capacity = fields.Integer(
         string="Capacity",
-        help="Maximum number of students allowed in the course"
+        help="Maximum number of students allowed in the course",
+        tracking=True
     )
 
     color = fields.Integer(
@@ -138,6 +140,7 @@ class MusicSchoolCourse(models.Model):
     def action_draft(self):
         for record in self:
             record.state = 'draft'
+            record.message_post(body="Course state changed to Draft.")
     
     def action_progress(self):
         for record in self:
@@ -156,6 +159,7 @@ class MusicSchoolCourse(models.Model):
     
     def group_expand_state(self, states, domain):
         return [key for key, val in type(self).state.selection]
+    
 
     def create_lesson(self):
         vals = {
@@ -163,6 +167,11 @@ class MusicSchoolCourse(models.Model):
             'teacher_id': self.teacher_id.id,
         }
         lesson = self.env['music.school.lesson'].create(vals)
+        lesson.message_post_with_source(
+                    'mail.message_origin_link',
+                    render_values={'self': lesson, 'origin': self},
+                    subtype_xmlid='mail.mt_note',
+                )
     
     def assign_students(self):
         for record in self:

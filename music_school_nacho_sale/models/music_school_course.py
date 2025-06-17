@@ -64,6 +64,22 @@ class MusicSchoolCourse(models.Model):
             'domain': [('id', 'in', self.order_ids.ids)],
         }
     
+    def write(self, vals):
+        if 'student_ids' in vals:
+            for record in self:
+                student_ids_commands = vals['student_ids']
+                removed_student_ids = [cmd[1] for cmd in student_ids_commands if cmd[0] == 3]
+                removed_students = self.env['music.school.student'].browse(removed_student_ids)
+                if removed_student_ids:
+                    # Unlink orders for removed students
+                    orders_to_unlink = self.env['sale.order'].search([
+                        ('course_id', '=', record.id),
+                        ('partner_id', 'in', removed_students.partner_id.ids)
+                    ])
+                    orders_to_unlink.unlink()
+        res = super().write(vals)
+        return res
+
     def action_cancel(self):
         res = super().action_cancel()
         self.order_ids.action_cancel()

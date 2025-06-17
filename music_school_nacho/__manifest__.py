@@ -7,7 +7,7 @@
     'license': 'LGPL-3',
     'category': 'Music School',
     'depends': [
-        'base',
+        'account','mail',
     ],
     'data':[
         'data/ir_cron.xml',
