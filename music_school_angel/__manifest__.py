@@ -11,6 +11,7 @@
     ],
     'data':[
         'data/ir_cron.xml',
+        'data/ir_sequence.xml',
         'data/music_school_data.xml',
         'security/res_groups.xml',
         'security/ir.model.access.csv',

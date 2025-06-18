@@ -52,10 +52,11 @@
                 </div>
                 <group>
                     <group>
-                        <field name="partner_id"></field>
+                        <!--<field name="partner_id"></field>-->
                         <field name="reference" readonly="1"/>
                         <field name="email"/>
                         <field name="phone"/>
+                        <field name="state_id"/>
                     </group>
                     <group>
                         <field name="user_id"/>

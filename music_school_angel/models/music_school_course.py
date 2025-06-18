@@ -11,9 +11,19 @@ class MusicSchoolCourse(models.Model):
         help="Indicates if the course is active"
    )
 
-   name = fields.Char(string="Name", copy=False)
+   name = fields.Char(string="Name", copy=False, default="New Course")
    description = fields.Text(string="Description", company_dependent=True)
-   state = fields.Selection([('draft', 'Draft'), ('progress', 'In progress'), ('finished', 'Finished')], string="State", default='draft', group_expand='group_expand_state')
+   state = fields.Selection(
+        selection=[
+            ('draft', 'Draft'),
+            ('progress', 'In progress'),
+            ('finished', 'Finished'),
+            ('cancelled', 'Cancelled'),
+        ],
+        string="State",
+        default='draft',
+        group_expand='group_expand_state'
+    )
 
    professor_id = fields.Many2one(
       comodel_name='music.school.professor',
@@ -143,6 +153,12 @@ class MusicSchoolCourse(models.Model):
          #lessons.state = 'done'
          lessons.write({'state': 'done'})
 
+   def action_cancel(self):
+      for record in self:
+         record.state = 'cancelled'
+
+
+
    def group_expand_state(self, states, domain):
         return [key for key, val in type(self).state.selection]
 
@@ -191,3 +207,8 @@ class MusicSchoolCourse(models.Model):
 
    def action_print_report(self):       
       return self.env.ref('music_school_angel.action_report_music_school_course').report_action(self.ids)
+
+   def create(self, vals):
+      vals['name'] = self.env['ir.sequence'].next_by_code('music.school.course')
+      res = super().create(vals)
+      return res
