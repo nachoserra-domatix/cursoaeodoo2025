@@ -12,6 +12,7 @@
     'data': [
        'views/music_school_course.xml',
        'views/sale_order_view.xml',
+       'views/product_template.xml',
     ],
     
 }
