@@ -1,3 +1,4 @@
+from datetime import timedelta
 from odoo import models, fields, api
 
 class SaleOrder(models.Model):
@@ -10,7 +11,8 @@ class SaleOrder(models.Model):
     )
 
     def action_confirm(self):
-        res = super(SaleOrder, self).action_confirm()
+        res = super().action_confirm()
+        
         for order in self:
             for line in order.order_line:
                 if line.product_id.course_ok:
@@ -18,6 +20,8 @@ class SaleOrder(models.Model):
                         'name': line.product_id.name,
                         'product_id': line.product_id.id,
                         'price': line.price_subtotal,
+                        'start_date': fields.Date.today(),
+                        'end_date': fields.Date.today() + timedelta(days=30),
                     })
                     order.course_id = course.id
                     break
