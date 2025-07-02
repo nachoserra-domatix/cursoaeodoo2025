@@ -13,3 +13,7 @@ class MusicSchoolRoom(models.Model):
         string="Location",
         help="Physical location of the room within the school"
     )
+
+    _sql_constraints = [
+        ('name_unique', 'UNIQUE(name)', 'The room name must be unique.'),
+    ]

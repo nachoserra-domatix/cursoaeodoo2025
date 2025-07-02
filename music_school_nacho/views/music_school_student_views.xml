@@ -36,6 +36,11 @@
             <button string="Generate reference" name="generate_reference" type="object" class="btn-primary"/>
             </header>
             <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_attendances" type="object" class="oe_stat_button" icon="fa-calendar">
+                        <field name="attendances_count" string="Attendances" widget="statinfo"/>
+                    </button>
+                </div>
                 <div class="oe_title">
                     <h1>
                         <field name="name" placeholder="Student"/>
@@ -43,9 +48,11 @@
                 </div>
                 <group>
                     <group>
+                        <!-- <field name="partner_id"/> -->
                         <field name="reference" readonly="1"/>
                         <field name="email"/>
                         <field name="phone"/>
+                        <field name="state_id"/>
                     </group>
                     <group>
                         <field name="user_id"/>

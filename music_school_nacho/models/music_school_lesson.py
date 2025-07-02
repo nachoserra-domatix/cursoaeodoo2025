@@ -5,6 +5,7 @@ class MusicSchoolLesson(models.Model):
     _name = 'music.school.lesson'
     _description = 'Lessons'
     _rec_name = 'course_id'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
     teacher_id = fields.Many2one(
@@ -24,7 +25,8 @@ class MusicSchoolLesson(models.Model):
     )
     date = fields.Datetime(
         string="Date",
-        help="Date and time when the lesson takes place"
+        help="Date and time when the lesson takes place",
+        default=fields.Datetime.now
     )
     duration = fields.Float(
         string="Duration (hours)",
@@ -50,6 +52,13 @@ class MusicSchoolLesson(models.Model):
         default='draft',
         help="Current state of the lesson",
         group_expand='group_expand_state'
+    )
+
+    attendance_ids = fields.One2many(
+        comodel_name='music.school.lesson.attendance',
+        inverse_name='lesson_id',
+        string="Attendance Records",
+        help="Attendance records for the lesson"
     )
 
     def group_expand_state(self, states, domain):

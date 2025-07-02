@@ -6,7 +6,7 @@
         <field name="res_model">music.school.course</field>
         <field name="view_mode">kanban,list,pivot,graph,calendar,form</field>
         <field name="domain">[]</field>
-        <field name="context">{}</field>
+        <field name="context">{'search_default_create_by_me': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
             Create your first course
@@ -41,9 +41,22 @@
                     <button string="Action Draft" invisible="state in ('draft')" name="action_draft" type="object" class="btn-secondary"/>
                     <button string="Action in Progress" invisible="state in ('progress')" name="action_progress" type="object" class="btn-success"/>
                     <button string="Action finish" invisible="state in ('finished')" name="action_finish" type="object" class="btn-primary"/>
+                    <button string="Action cancel" invisible="state in ('cancelled')" name="action_cancel" type="object" class="btn-danger"/>
+                    <button string="Create Lesson" groups="music_school_nacho.group_music_school_manager" name="create_lesson" type="object" class="btn-primary"/>
+                    <button string="Assign students" groups="music_school_nacho.group_music_school_manager" name="assign_students" type="object" class="btn-secondary"/>
+                    <button string="Print report" name="action_print_report" context="{'button1': True}" type="object" class="oe_highlight"/>
+                    <button string="Print report 2" name="action_print_report" context="{'button2': True}" type="object" class="oe_highlight"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_exams" type="object" class="oe_stat_button" icon="fa-bookmark">
+                        <field name="exam_count" string="Exams" widget="statinfo"/>
+                    </button>
+                    <button name="action_view_lessons" type="object" class="oe_stat_button" icon="fa-calendar">
+                        <field name="lesson_count" string="Lessons" widget="statinfo"/>
+                    </button>
+                </div>
                 <div class="oe_title">
                     <h1>
                         <field name="name" placeholder="Course"/>
@@ -51,14 +64,17 @@
                 </div>
                     <group>
                         <group>
-                            <field name="teacher_id" domain="[('level','=',level)]"/>
+                            <field name="teacher_id" options="{'no_create':1,'no_quick_create':1,'no_open':1}" domain="[('level','=',level)]"/>
                             <field name="instrument_id"/>
                             <field name="level"/>
+                            <field name="company_id"/>
+                            <field name="create_uid"/>
                         </group>
 
                         <group>
                             <field name="start_date"/>
                             <field name="end_date"/>
+                            <field name="day_duration"/>
                             <field name="capacity"/>
                         </group>
                     </group>
@@ -66,8 +82,17 @@
                         <page string="Description">
                             <field name="description"/>
                         </page>
+                        <page string="Students">
+                            <field name="student_ids"/>
+                        </page>
                     </notebook>
                 </sheet>
+                <!-- <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div> -->
+                <chatter/>
             </form>
         </field>
     </record>
@@ -80,6 +105,7 @@
                 <field name="name" filter_domain="['|',('instrument_id', 'ilike', self),('name','ilike',self)]"/>
                 <field name="teacher_id"/>
                 <field name="instrument_id"/>
+                <filter name="create_by_me" string="Created by me" domain="[('create_uid', '=', uid)]" />
                 <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
                 <filter string="In Progress" name="progress" domain="[('state', '=', 'progress')]"/>
                 <filter string="Teacher" name="group_by_teacher" context="{'group_by': 'teacher_id'}" />
